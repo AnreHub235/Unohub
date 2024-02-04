@@ -347,46 +347,29 @@ local function C_9()
 local script = G2L["9"];
 	while wait() do
 	local parent = script.Parent
-if First_Sea then
-		if not game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg") then
-	parent.Text = "Wait beli for buy BlackLeg"
+
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg")
-		
-		elseif not game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectro") then
-		parent.Text = "Wait beli for buy Electro"
+
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectro")
-		elseif not game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyFishmanKarate") then
-		parent.Text = "Wait beli for buy Fishman Karate"
+
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyFishmanKarate")
-	end
-	elseif Second_Sea then
-		if not game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","DragonClaw")
-	parent.Text = "Wait beli for buy DragonClaw"
+
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","DragonClaw","1")
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","DragonClaw","2")
-		elseif not game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman") then
-		parent.Text = "Wait beli for buy Superhuman"
+
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman")
-		elseif not game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep") then
-		parent.Text = "Wait beli for buy Deathstep"
+
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep")
-	elseif not game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate",true) and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate") then
-		parent.Text = "Wait beli for buy Sharkman Karate"
+
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate",true)
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate")
-	end
-	elseif Third_Sea then
-		elseif not game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw") then
-		parent.Text = "Wait beli for buy ElectricClaw"
+
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw")
-		elseif not game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon") then
-		parent.Text = "Wait beli for buy DragonTalon"
+
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon")
-		elseif not game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman") then
-		parent.Text = "Wait beli for buy God human"
+
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman")
-	end
-	end
+
 	end
 end;
 task.spawn(C_9);
