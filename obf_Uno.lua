@@ -7,6 +7,7 @@
 ╚██████╔╝██║░╚███║╚█████╔╝
 ░╚═════╝░╚═╝░░╚══╝░╚════╝░
 ]=]
+
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
@@ -4592,7 +4593,7 @@ local ToggleMelee = Tabs.Stats:AddToggle("ToggleMelee", {Title = "Auto Melee", D
 ToggleMelee:OnChanged(function(Value)
     _G.Auto_Stats_Melee = Value
     end)
-Options.ToggleMelee:SetValue(false)
+Options.ToggleMelee:SetValue(true)
 
 
 
@@ -4601,7 +4602,7 @@ local ToggleDe = Tabs.Stats:AddToggle("ToggleDe", {Title = "Auto Defense", Defau
 ToggleDe:OnChanged(function(Value)
     _G.Auto_Stats_Defense = Value
     end)
-Options.ToggleDe:SetValue(false)
+Options.ToggleDe:SetValue(true)
 
 
 
@@ -4609,7 +4610,7 @@ local ToggleSword = Tabs.Stats:AddToggle("ToggleSword", {Title = "Auto Sword", D
 ToggleSword:OnChanged(function(Value)
     _G.Auto_Stats_Sword = Value
     end)
-Options.ToggleSword:SetValue(false)
+Options.ToggleSword:SetValue(true)
 
 
 
@@ -4617,14 +4618,14 @@ local ToggleGun = Tabs.Stats:AddToggle("ToggleGun", {Title = "Auto Gun", Default
 ToggleGun:OnChanged(function(Value)
     _G.Auto_Stats_Gun = Value
     end)
-Options.ToggleGun:SetValue(false)
+Options.ToggleGun:SetValue(true)
 
 
 local ToggleFruit = Tabs.Stats:AddToggle("ToggleFruit", {Title = "Auto Demon Fruit", Default = false })
 ToggleFruit:OnChanged(function(Value)
     _G.Auto_Stats_Devil_Fruit = Value
     end)
-Options.ToggleFruit:SetValue(false)
+Options.ToggleFruit:SetValue(true)
 
 
 spawn(function()
