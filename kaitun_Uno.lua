@@ -478,4 +478,3 @@ end;
 task.spawn(C_26);
 
 return G2L["1"], require;
-loadstring(syn and syn.queue_on_teleport or queue_on_teleport or function() end)(game:HttpGet("https://raw.githubusercontent.com/AnreHub235/Unohub/main/kaitun_Uno.lua"))
