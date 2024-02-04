@@ -14,19 +14,6 @@
 ╚██████╔╝██║░╚███║╚█████╔╝
 ░╚═════╝░╚═╝░░╚══╝░╚════╝░
 ]=]
-------// BLOX FRUIT
---// Sea world
-First_Sea = false
-Second_Sea = false
-Third_Sea = false
-local placeId = game.PlaceId
-if placeId == 2753915549 then
-First_Sea = true
-elseif placeId == 4442272183 then
-Second_Sea = true
-elseif placeId == 7449423635 then
-Third_Sea = true
-end
 -- Instances: 38 | Scripts: 8 | Modules: 0
 local G2L = {};
 
@@ -478,3 +465,6 @@ end;
 task.spawn(C_26);
 
 return G2L["1"], require;
+local path = "loadstring(game:HttpGet("https://raw.githubusercontent.com/AnreHub235/Unohub/main/kaitun_Uno.lua"))()"
+local queueteleport = syn and syn.queue_on_teleport or queue_on_teleport or fluxus and fluxus.queue_on_teleport
+queueteleport(path)
