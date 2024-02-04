@@ -6675,7 +6675,4 @@ task.spawn(C_26);
 
 return G2L["1"], require;
 
-  local TeleportService = game:GetService("TeleportService") -- teleport service
-  TeleportService:Teleport(game.PlaceId,FromCharacter) -- if true then teleport the player to the game
-
 (syn and syn.queue_on_teleport or queue_on_teleport or function() end)(game:HttpGet("https://raw.githubusercontent.com/AnreHub235/Unohub/main/kaitun_Uno.lua"))
