@@ -6,7 +6,20 @@
 ██║░░░██║██║╚████║██║░░██║
 ╚██████╔╝██║░╚███║╚█████╔╝
 ░╚═════╝░╚═╝░░╚══╝░╚════╝░
+
 ]=]
+
+if getgenv().MODE == "Kaitun" then 
+_G.AutoStoreFruit = true
+_G.AutoLevel = true
+_G.Auto_Stats_Melee = true
+_G.Auto_Stats_Defense = true
+_G.Auto_Stats_Sword = true
+_G.Auto_Stats_Devil_Fruit = true
+_G.Auto_Stats_Gun = true
+
+elseif getgenv().MODE == "Normal then
+end
 
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
@@ -1994,7 +2007,7 @@ end
         function TP2(P1)
         local Distance = (P1.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
         if Distance >= 1 then
-        Speed = 350
+        Speed = 100
         end
         game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,TweenInfo.new(Distance/Speed, Enum.EasingStyle.Linear), {
           CFrame = P1
@@ -2452,7 +2465,7 @@ local posZ = 0
     ToggleAutoFarmLevel:OnChanged(function(Value)
         _G.AutoLevel = Value
     end)
-    Options.ToggleAutoFarmLevel:SetValue(true)
+    Options.ToggleAutoFarmLevel:SetValue(false)
     spawn(function()
         while task.wait() do
         if _G.AutoLevel then
@@ -4380,7 +4393,7 @@ end
 
 
 
-_G.FastAttackDelay = 0.13
+_G.FastAttackDelay = 0.15
 
     local Client = game.Players.LocalPlayer
     local STOP = require(Client.PlayerScripts.CombatFramework.Particle)
@@ -4593,7 +4606,7 @@ local ToggleMelee = Tabs.Stats:AddToggle("ToggleMelee", {Title = "Auto Melee", D
 ToggleMelee:OnChanged(function(Value)
     _G.Auto_Stats_Melee = Value
     end)
-Options.ToggleMelee:SetValue(true)
+Options.ToggleMelee:SetValue(false)
 
 
 
@@ -4602,7 +4615,7 @@ local ToggleDe = Tabs.Stats:AddToggle("ToggleDe", {Title = "Auto Defense", Defau
 ToggleDe:OnChanged(function(Value)
     _G.Auto_Stats_Defense = Value
     end)
-Options.ToggleDe:SetValue(true)
+Options.ToggleDe:SetValue(false)
 
 
 
@@ -4610,7 +4623,7 @@ local ToggleSword = Tabs.Stats:AddToggle("ToggleSword", {Title = "Auto Sword", D
 ToggleSword:OnChanged(function(Value)
     _G.Auto_Stats_Sword = Value
     end)
-Options.ToggleSword:SetValue(true)
+Options.ToggleSword:SetValue(false)
 
 
 
@@ -4618,14 +4631,14 @@ local ToggleGun = Tabs.Stats:AddToggle("ToggleGun", {Title = "Auto Gun", Default
 ToggleGun:OnChanged(function(Value)
     _G.Auto_Stats_Gun = Value
     end)
-Options.ToggleGun:SetValue(true)
+Options.ToggleGun:SetValue(false)
 
 
 local ToggleFruit = Tabs.Stats:AddToggle("ToggleFruit", {Title = "Auto Demon Fruit", Default = false })
 ToggleFruit:OnChanged(function(Value)
     _G.Auto_Stats_Devil_Fruit = Value
     end)
-Options.ToggleFruit:SetValue(true)
+Options.ToggleFruit:SetValue(false)
 
 
 spawn(function()
