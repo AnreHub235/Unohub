@@ -6,14 +6,15 @@
 88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88 
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER
 
-
 ██╗░░░██╗███╗░░██╗░█████╗░
 ██║░░░██║████╗░██║██╔══██╗
 ██║░░░██║██╔██╗██║██║░░██║
 ██║░░░██║██║╚████║██║░░██║
 ╚██████╔╝██║░╚███║╚█████╔╝
 ░╚═════╝░╚═╝░░╚══╝░╚════╝░
+
 ]=]
+
 -- Instances: 38 | Scripts: 8 | Modules: 0
 local G2L = {};
 
@@ -333,30 +334,33 @@ task.spawn(C_7);
 local function C_9()
 local script = G2L["9"];
 	while wait() do
-	local parent = script.Parent
-
+		if not game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg") then
+	
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg")
-
+		
+		elseif not game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectro") then
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectro")
-
+		elseif not game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyFishmanKarate") then
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyFishmanKarate")
-
+		elseif not game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","DragonClaw","1") and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","DragonClaw","2") then
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","DragonClaw","1")
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","DragonClaw","2")
-
+		elseif not game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman") then
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman")
-
+		elseif not game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep") then
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep")
-
+	elseif not game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate",true) and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate") then
+		
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate",true)
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate")
-
+	
+		elseif not game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw") then
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw")
-
+		elseif not game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon") then
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon")
-
+		elseif not game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman") then
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman")
-
+	end
 	end
 end;
 task.spawn(C_9);
@@ -458,13 +462,9 @@ task.spawn(C_25);
 -- StarterGui.Kaitun.Run
 local function C_26()
 local script = G2L["26"];
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AnreHub235/Unohub/main/obf_Uno.lua"))()
-wait(1)
-	game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.End,false,game)
+	getgenv().MODE = "Kaitun"
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/AnreHub235/Unohub/main/obf_Uno.lua", true))()
 end;
 task.spawn(C_26);
 
 return G2L["1"], require;
-local path = "loadstring(game:HttpGet("https://raw.githubusercontent.com/AnreHub235/Unohub/main/kaitun_Uno.lua"))()"
-local queueteleport = syn and syn.queue_on_teleport or queue_on_teleport or fluxus and fluxus.queue_on_teleport
-queueteleport(path)
