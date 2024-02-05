@@ -5,7 +5,9 @@ local KT = "https://raw.githubusercontent.com/AnreHub235/Unohub/main/kaitun_Uno.
 local t = true
 
 if getgenv().Mode == "Kaitun" then
+getgenv().MODE == "Kaitun"
 ld(g:HttpGet(KT, t))()
 elseif getgenv().Mode == "Normal" then
+getgenv().MODE == "Normal"
 ld(g:HttpGet(NL, t))()
 end
