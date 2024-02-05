@@ -18,7 +18,7 @@ _G.Auto_Stats_Sword = true
 _G.Auto_Stats_Devil_Fruit = true
 _G.Auto_Stats_Gun = true
 
-elseif getgenv().MODE == "Normal then
+elseif getgenv().MODE == "Normal" then
 end
 
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
@@ -2321,6 +2321,7 @@ function BTP(p)
 --------------------------------------------------------------------------------------------------------------------------------------------
 
 ---Close gui
+if getgenv().MODE == "Normal" then
 local ScreenGui = Instance.new("ScreenGui")
 local ImageButton = Instance.new("ImageButton")
 local UICorner = Instance.new("UICorner")
@@ -2403,6 +2404,7 @@ coroutine.wrap(YTZCAJC_fake_script)()
 local posX = 0
 local posY = 60
 local posZ = 0
+end
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Create Tabs
     Tabs.Main:AddParagraph({
