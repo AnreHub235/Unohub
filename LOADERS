@@ -1,7 +1,7 @@
 local ld = loadstring
 local g = game
 local NL = "https://raw.githubusercontent.com/AnreHub235/Unohub/main/obf_Uno.lua"
-loacl KT = "https://raw.githubusercontent.com/AnreHub235/Unohub/main/kaitun_Uno.lua"
+local KT = "https://raw.githubusercontent.com/AnreHub235/Unohub/main/kaitun_Uno.lua"
 local t = true
 
 if getgenv().Mode == "Kaitun" then
