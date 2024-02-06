@@ -508,7 +508,7 @@ local script = G2L["26"];
 			Auto_Bone = false
 		},
 		UI = {
-			Button = true
+			Button = false
 		}
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AnreHub235/Unohub/main/obf_Uno.lua"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AnreHub235/Unohub/main/QueueonTeleport/Kaitun"))()
