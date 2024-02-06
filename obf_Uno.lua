@@ -1,5 +1,3 @@
-getgenv().MODE = {}
-
 --[=[
 
 ██╗░░░██╗███╗░░██╗░█████╗░
@@ -9,7 +7,109 @@ getgenv().MODE = {}
 ╚██████╔╝██║░╚███║╚█████╔╝
 ░╚═════╝░╚═╝░░╚══╝░╚════╝░
 
+	_G.Settings = {
+		Skill = {
+			SKillZ = true,
+			SkillX = true,
+			SkillC = true,
+			SkillV = true,
+			SkillF = true
+		},
+		Stats = {
+			Auto_Melee = true,
+			Auto_Defense = true,
+			Auto_Sword = true,
+			Auto_Gun = true,
+			Auto_Devil_Fruit = true
+		},
+		SettingINFO = {
+			["AutoDisable_Text Damage"] = true,
+			BypassTP = false,
+			BringMobs = true,
+			FastAttack = {
+				Toggle = true,
+				Value = "0.15"
+			}
+		},
+		Main = {
+			Level = {
+				FpsBooster = false,
+				Auto_Redeem = true,
+				Auto_Level = true,
+				Weapon = "Melee" -- Melee , Sword , BloxFruit.
+			}
+		
+			Auto_Factory = false,
+			Auto_Tushita = false,
+			Auto_Yama = false,
+			Auto_HallowSycthe = false,
+			Auto_Mirage = false,
+			Auto_W = false,
+			Auto_Elite = false,
+			Auto_Piranha = false,
+			Auto_Terrirshark = false,
+			Auto_VatChatKiDi = false,
+			Auto_CakePrince = false,
+			Auto_Bone = false
+		},
+		UI = {
+			Button = true
+		}
+	}
+
 ]=]
+
+if not _G.Settiongs then
+	_G.Settings = {
+		Skill = {
+			SKillZ = true,
+			SkillX = true,
+			SkillC = true,
+			SkillV = true,
+			SkillF = true
+		},
+		Stats = {
+			Auto_Melee = true,
+			Auto_Defense = true,
+			Auto_Sword = true,
+			Auto_Gun = true,
+			Auto_Devil_Fruit = true
+		},
+		SettingINFO = {
+			["AutoDisable_Text Damage"] = true,
+			BypassTP = false,
+			BringMobs = true,
+			FastAttack = {
+				Toggle = true,
+				Value = "0.15"
+			}
+		},
+		Main = {
+			Level = {
+				FpsBooster = false,
+				Auto_Redeem = false,
+				Auto_Level = false,
+				Weapon = "Melee" -- Melee , Sword , BloxFruit.
+			}
+		
+			Auto_Factory = false,
+			Auto_Tushita = false,
+			Auto_Yama = false,
+			Auto_HallowSycthe = false,
+			Auto_Mirage = false,
+			Auto_W = false,
+			Auto_Elite = false,
+			Auto_Piranha = false,
+			Auto_Terrirshark = false,
+			Auto_VatChatKiDi = false,
+			Auto_CakePrince = false,
+			Auto_Bone = false
+		},
+		UI = {
+			Button = true
+		}
+	}
+end
 
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
@@ -2311,7 +2411,7 @@ function BTP(p)
 --------------------------------------------------------------------------------------------------------------------------------------------
 
 ---Close gui
-if getgenv().MODE == "Normal" then
+if _G.Settings.UI.Button then
 local ScreenGui = Instance.new("ScreenGui")
 local ImageButton = Instance.new("ImageButton")
 local UICorner = Instance.new("UICorner")
@@ -2394,6 +2494,7 @@ coroutine.wrap(YTZCAJC_fake_script)()
 local posX = 0
 local posY = 60
 local posZ = 0
+else
 end
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Create Tabs
@@ -2410,8 +2511,9 @@ end
     })
     DropdownSelectWeapon:SetValue('Melee')
     DropdownSelectWeapon:OnChanged(function(Value)
-        ChooseWeapon = Value
+        ChooseWeapon = Value or _G.Settings.Main.Level.Weapon 
     end)
+
     task.spawn(function()
         while wait() do
             pcall(function()
@@ -2457,7 +2559,11 @@ end
     ToggleAutoFarmLevel:OnChanged(function(Value)
         _G.AutoLevel = Value
     end)
+if _G.Settings.Main.Level.Auto_Level then
+    Options.ToggleAutoFarmLevel:SetValue(true)
+else
     Options.ToggleAutoFarmLevel:SetValue(false)
+end
     spawn(function()
         while task.wait() do
         if _G.AutoLevel then
@@ -2561,7 +2667,9 @@ end
             UseCode()
         end
     })
-
+if _G.Settings.Main.Level.Auto_Redeem then
+	UseCode()
+end
     function UseCode(Text)
         game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(Text)
     end
@@ -2598,7 +2706,9 @@ end
             FPSBooster()
         end
     })
-
+if _G.Settings.Main.Level.FpsBooster then
+	FPSBooster()
+end
     function FPSBooster()
         local decalsyeeted = true
         local g = game
@@ -3196,7 +3306,13 @@ local ToggleBone = Tabs.Main:AddToggle("ToggleBone", {Title = "Auto Farm Bone", 
 ToggleBone:OnChanged(function(Value)
     _G.AutoBone = Value
 end)
-Options.ToggleBone:SetValue(false)
+
+if _G.Settings.Main.Auto_Bone then
+	Options.ToggleBone:SetValue(true)
+else
+	Options.ToggleBone:SetValue(false)
+end
+
 local FaiFaoQuestBone =  CFrame.new(-9515.75, 174.8521728515625, 6079.40625)
 
 
@@ -3267,7 +3383,12 @@ local ToggleCake = Tabs.Main:AddToggle("ToggleCake", {Title = "Auto Farm Cake Pr
 ToggleCake:OnChanged(function(Value)
  _G.CakePrince = Value
 end)
-Options.ToggleCake:SetValue(false)
+
+if _G.Settings.Main.Auto_Cake then
+	Options.ToggleCake:SetValue(true)
+else
+	Options.ToggleCake:SetValue(false)
+end
 
 spawn(function()
     while task.wait() do
@@ -3347,7 +3468,12 @@ spawn(function()
     ToggleVatChatKiDi:OnChanged(function(Value)
         _G.Ecto = Value
     end)
+
+if _G.Settings.Main.Auto_VatChatKiDi then
+    Options.ToggleVatChatKiDi:SetValue(true)
+els
     Options.ToggleVatChatKiDi:SetValue(false)
+end
 
     spawn(function()
         while wait(.1) do
@@ -3599,7 +3725,13 @@ if Third_Sea then
     ToggleBoat:OnChanged(function(Value)
         _G.AutoBuyBoat = Value
     end)
+
+if _G.Settings.Main.Auto_BuyBoat then
+    Options.ToggleBoat:SetValue(true)
+else
     Options.ToggleBoat:SetValue(false)
+end
+
     task.spawn(function()
         while wait() do
             pcall(function()
@@ -3674,31 +3806,18 @@ if Third_Sea then
         end
     end)
 
-
-   local ToggleTW = Tabs.Main:AddToggle("ToggleTW", {Title = "Auto Press W", Default = false })
-
-   ToggleTW:OnChanged(function(Value)
-    _G.AutoW = Value
-    end)
-    Options.ToggleTW:SetValue(false)
-    spawn(function()
-        while wait() do
-            pcall(function()
-                if _G.AutoW then
-                    game:GetService("VirtualInputManager"):SendKeyEvent(true,"W",false,game)
-                end
-            end)
-        end
-        end)
-    
-
-
     local ToggleTerrorshark = Tabs.Main:AddToggle("ToggleTerrorshark", {Title = "Auto Kill Terrorshark", Default = false })
 
     ToggleTerrorshark:OnChanged(function(Value)
         _G.AutoTerrorshark = Value
     end)
+
+if _G.Settings.Main.Auto_Terrirshark then
+    Options.ToggleTerrorshark:SetValue(true)
+else
     Options.ToggleTerrorshark:SetValue(false)
+end
+
     spawn(function()
         while wait() do
             if  _G.AutoTerrorshark then
@@ -3738,7 +3857,12 @@ if Third_Sea then
      TogglePiranha:OnChanged(function(Value)
         _G.farmpiranya = Value
      end)
+
+if _G.Settings.Main.Auto_Piranha then
+     Options.TogglePiranha:SetValue(true)
+else
      Options.TogglePiranha:SetValue(false)
+end
 
      spawn(function()
         while wait() do
@@ -3785,7 +3909,13 @@ if Third_Sea then
     ToggleElite:OnChanged(function(Value)
        _G.AutoElite = Value
        end)
+
+if _G.Settings.Main.Auto_Elite then
+       Options.ToggleElite:SetValue(true)
+else
        Options.ToggleElite:SetValue(false)
+end
+
        spawn(function()
            while task.wait() do
                if _G.AutoElite then
@@ -3990,24 +4120,6 @@ ToggleSeaBeAst:OnChanged(function(Value)
         end
     end)
 
-local ToggleAutoW = Tabs.Main:AddToggle("ToggleAutoW", {Title = "Auto Press W", Default = false })
-ToggleAutoW:OnChanged(function(Value)
-    _G.AutoW = Value
-    end)
- Options.ToggleAutoW:SetValue(false)
- spawn(function()
-    while wait() do
-        pcall(function()
-            if _G.AutoW then
-                game:GetService("VirtualInputManager"):SendKeyEvent(true,"W",false,game)
-            end
-        end)
-    end
-    end)
-
-
-
-
  Tabs.Main:AddParagraph({
     Title = "Mirage Island",
     Content = "Auto Summon Mystic Island"
@@ -4078,14 +4190,23 @@ end
 end
 end) 
 
+if _G.Settings.Main.Auto_Mirage then
+ Options.ToggleMirage:SetValue(true)
+else
  Options.ToggleMirage:SetValue(false)
-
+end
 
  local AutoW = Tabs.Main:AddToggle("AutoW", {Title = "Auto Press W", Default = false })
  AutoW:OnChanged(function(Value)
     _G.AutoW = Value
      end)
+
+if _G.Settings.Main.Auto_W then
+  Options.AutoW:SetValue(true)
+else
   Options.AutoW:SetValue(false)
+end
+
   spawn(function()
     while wait() do
         pcall(function()
@@ -4109,7 +4230,13 @@ end
     ToggleHallow:OnChanged(function(Value)
         AutoHallowSycthe = Value
     end)
+
+if _G.Settings.Main.Auto_HallowSycthe then
+    Options.ToggleHallow:SetValue(true)
+else
     Options.ToggleHallow:SetValue(false)
+end
+
     spawn(function()
         while wait() do
             if AutoHallowSycthe then
@@ -4163,7 +4290,13 @@ end
            ToggleYama:OnChanged(function(Value)
             _G.AutoYama = Value
            end)
-           Options.ToggleYama:SetValue(false)
+
+if _G.Settings.Main.Auto_Yama then
+           Options.ToggleYama:SetValue(true)
+else 
+	   Options.ToggleYama:SetValue(false)
+end
+
            spawn(function()
             while wait() do
                 if _G.AutoYama then
@@ -4181,7 +4314,13 @@ end
         ToggleTushita:OnChanged(function(Value)
             AutoTushita = Value
         end)
-        Options.ToggleTushita:SetValue(false)
+
+if _G.Settings.Main.Auto_Tushita then
+        Options.ToggleTushita:SetValue(true)
+else
+	Options.ToggleTushita:SetValue(false)
+end
+
         local FaiFaoTushita = CFrame.new(-10238.875976563, 389.7912902832, -9549.7939453125)
         spawn(function()
             while task.wait(.1) do
@@ -4329,7 +4468,12 @@ end
         ToggleFactory:OnChanged(function(Value)
             _G.Factory = Value
         end)
-        Options.ToggleFactory:SetValue(false)
+
+if _G.Settings.Main.AutoFactory then
+        Options.ToggleFactory:SetValue(true)
+else
+	Options.ToggleFactory:SetValue(false)
+end
 
         spawn(function()
             while wait() do
@@ -4380,12 +4524,14 @@ end
     ToggleFastAttack:OnChanged(function(vu)
         FastAttack = vu
     end)
+if _G.Settings.SettingINFO.FastAttack.Toggle then
     Options.ToggleFastAttack:SetValue(true)
+else
+    Options.ToggleFastAttack:SetValue(false)
+end
 
 
-
-
-_G.FastAttackDelay = 0.15
+_G.FastAttackDelay = _G.Settings.SettingINFO.FastAttack.Value
 
     local Client = game.Players.LocalPlayer
     local STOP = require(Client.PlayerScripts.CombatFramework.Particle)
@@ -4457,6 +4603,8 @@ function AttackHit()
         end
     end
 end
+
+
 spawn(function()
     while wait(.1) do
         if FastAttack then
@@ -4478,7 +4626,13 @@ CamShake:Stop()
     ToggleBringMob:OnChanged(function(Value)
         BringMobs = Value
     end)
+
+if _G.Settings.SettingINFO.BringMobs then
     Options.ToggleBringMob:SetValue(true)
+else
+    Options.ToggleBringMob:SetValue(false)
+end
+
 	task.spawn(function()
         while task.wait() do
         if BringMobs then
@@ -4531,16 +4685,23 @@ CamShake:Stop()
     ToggleBypassTP:OnChanged(function(Value)
         BypassTP = Value
     end)
+
+if _G.Settings.SettingINFO.BypassTP then
+    Options.ToggleBypassTP:SetValue(true)
+else
     Options.ToggleBypassTP:SetValue(false)
 end
-
-
 
 local ToggleRemove = Tabs.Setting:AddToggle("ToggleRemove", {Title = "Remove Dame Text", Default = true })
 ToggleRemove:OnChanged(function(Value)
     FaiFaoRemovetext = Value
     end)
+
+if _G.Settings.SettingINFO["AutoDisable_Text Damage"] then
     Options.ToggleRemove:SetValue(true)
+else
+    Options.ToggleRemove:SetValue(false)
+end
 
     spawn(function()
         while wait() do
@@ -4563,43 +4724,68 @@ local ToggleZ = Tabs.Setting:AddToggle("ToggleZ", {Title = "Skill Z", Default = 
 ToggleZ:OnChanged(function(Value)
     SkillZ = Value
 end)
+
+if _G.Settings.Skill.SkillZ then
 Options.ToggleZ:SetValue(true)
+else
+Options.ToggleZ:SetValue(false)
+end
 
 local ToggleX = Tabs.Setting:AddToggle("ToggleX", {Title = "Skill X", Default = true })
 ToggleX:OnChanged(function(Value)
     SkillX = Value
 end)
-Options.ToggleX:SetValue(true)
 
+if _G.Settings.Skill.SkillX then
+Options.ToggleX:SetValue(true)
+else
+Options.ToggleX:SetValue(false)
+end
 
 local ToggleC = Tabs.Setting:AddToggle("ToggleC", {Title = "Skill C", Default = true })
 ToggleC:OnChanged(function(Value)
     SkillC = Value
 end)
-Options.ToggleC:SetValue(true)
 
+if _G.Settings.Skill.SkillC then
+Options.ToggleC:SetValue(true)
+else
+Options.ToggleC:SetValue(false)
+end
 
 local ToggleV = Tabs.Setting:AddToggle("ToggleV", {Title = "Skill V", Default = true })
 ToggleV:OnChanged(function(Value)
     SkillV = Value
 end)
-Options.ToggleV:SetValue(true)
 
+if _G.Settings.Skill.SkillV then
+Options.ToggleV:SetValue(true)
+else
+Options.ToggleV:SetValue(false)
+end
 
 local ToggleF = Tabs.Setting:AddToggle("ToggleF", {Title = "Skill F", Default = true })
 ToggleF:OnChanged(function(Value)
    SkillF = Value
     end)
-Options.ToggleF:SetValue(true)
 
+if _G.Settings.Skill.SkillF then
+Options.ToggleF:SetValue(true)
+else
+Options.ToggleF:SetValue(false)
+end
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Stats
 local ToggleMelee = Tabs.Stats:AddToggle("ToggleMelee", {Title = "Auto Melee", Default = false })
 ToggleMelee:OnChanged(function(Value)
     _G.Auto_Stats_Melee = Value
     end)
-Options.ToggleMelee:SetValue(false)
 
+if _G.Settings.Stats.Auto_Melee then
+Options.ToggleMelee:SetValue(true)
+else
+Options.ToggleMelee:SetValue(false)
+end
 
 
 
@@ -4607,31 +4793,47 @@ local ToggleDe = Tabs.Stats:AddToggle("ToggleDe", {Title = "Auto Defense", Defau
 ToggleDe:OnChanged(function(Value)
     _G.Auto_Stats_Defense = Value
     end)
-Options.ToggleDe:SetValue(false)
 
+if _G.Settings.Stats.Auto_Defense then
+Options.ToggleDe:SetValue(true)
+else
+Options.ToggleDe:SetValue(false)
+end
 
 
 local ToggleSword = Tabs.Stats:AddToggle("ToggleSword", {Title = "Auto Sword", Default = false })
 ToggleSword:OnChanged(function(Value)
     _G.Auto_Stats_Sword = Value
     end)
-Options.ToggleSword:SetValue(false)
 
+if _G.Settings.Stats.Auto_Sword then
+Options.ToggleSword:SetValue(true)
+else
+Options.ToggleSword:SetValue(false)
+end
 
 
 local ToggleGun = Tabs.Stats:AddToggle("ToggleGun", {Title = "Auto Gun", Default = false })
 ToggleGun:OnChanged(function(Value)
     _G.Auto_Stats_Gun = Value
     end)
-Options.ToggleGun:SetValue(false)
 
+if _G.Settings.Stats.Auto_Gun then
+Options.ToggleGun:SetValue(true)
+else
+Options.ToggleGun:SetValue(false)
+end
 
 local ToggleFruit = Tabs.Stats:AddToggle("ToggleFruit", {Title = "Auto Demon Fruit", Default = false })
 ToggleFruit:OnChanged(function(Value)
     _G.Auto_Stats_Devil_Fruit = Value
     end)
-Options.ToggleFruit:SetValue(false)
 
+if _G.Settings.Stats.Auto_Devil_Fruit then
+Options.ToggleFruit:SetValue(true)
+else
+Options.ToggleFruit:SetValue(false)
+end
 
 spawn(function()
     while wait() do
