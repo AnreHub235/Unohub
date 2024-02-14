@@ -158,7 +158,7 @@ local listPre = {
 }
 _G.GameSupport = {"Pet Simulator X","GPO - Grand Piece Online","Blox Fruit","King Legacy","Anime Soul Simulator","Anime Defense Simulator","Ro Fruit","Collect All Pets","Tower of Hell","Break In","Arsenal","Mad City","Viet Nam Piece","Field Trip Z","Giant Survival!","Murder Mystery 2","steve's one piece","Anime Fighters Simulator","Tradelands","Dungeon Quest","Two Piece"}
 _G.HoHoLoaded = true
--- _G.MY_KEY_IS = "No_Key"
+_G.MY_KEY_IS = "No_Key"
 notify = loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Notification.lua"))()
 
 if getgenv().Key and listPre[game.GameId] ~= nil then
@@ -170,10 +170,3 @@ else
 	notify.New("This game is not supported by hohohub :(", 60)
 	notify.New("Please join discord.gg/hohohub to see what game r supported by us!", 60)
 end
--- if _G["HoHo Hub Auto Bounty V3"] or _G["Fumo Blox Fruit - HoHo Hub Kaitun V3"] then return end
--- local path = "loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HohoV2/main/ScriptLoad.lua'))()"
--- if getgenv().Key then
--- 	path = "getgenv().Key = '"..getgenv().Key.."'\n"..path
--- end
--- local queueteleport = syn and syn.queue_on_teleport or queue_on_teleport or fluxus and fluxus.queue_on_teleport
--- queueteleport(path)
