@@ -70,7 +70,7 @@ print(" \______/ \__|  \__| \______/       \__|  \__| \______/ \_______/ ")
 
 ]=]
 
-if not _G.Settiongs then
+if not _G.Settings then
 	_G.Settings = {
 		Skill = {
 			SKillZ = true,
@@ -101,7 +101,7 @@ if not _G.Settiongs then
 				Auto_Redeem = false,
 				Auto_Level = false,
 				Weapon = "Melee" -- Melee , Sword , BloxFruit.
-			}
+			},
 		
 			Auto_Factory = false,
 			Auto_Tushita = false,
