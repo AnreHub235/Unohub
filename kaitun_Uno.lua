@@ -492,7 +492,7 @@ local script = G2L["26"];
 				Auto_Redeem = true,
 				Auto_Level = true,
 				Weapon = "Melee" -- Melee , Sword , BloxFruit.
-			}
+			},
 		
 			Auto_Factory = false,
 			Auto_Tushita = false,
