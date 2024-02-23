@@ -1,54 +1,42 @@
-{"Codex":
- {"IOS":
+:Codex:
+ :IOS:
      "2.612"    
- },
- {"Android":
+
+ :Android:
      "2.610"    
- },
-},
 
-{"Fluxus":
- {"IOS":
+:Fluxus:
+ :IOS:
      "Not Found"
- },
- {"Android":
-     "2.610_32bit.apk",
+ 
+ :Android:
+     "2.610_32bit.apk"
      "2.610_64bit"
- }
-},
 
-{"Delta":
- {"IOS": 
+:Delta:
+ :IOS: 
      "Not Found"
- },
- {"Android": 
+ 
+ :Android: 
      "Cannot check version by link discord invalid"
- },
-},
 
-{"Hydrogen":
- {"IOS": 
+:Hydrogen:
+ :IOS: 
      "Not Found"
- },
- {"Android": 
+ 
+ :Android: 
      "v2.6.4"
- },
-},
 
-{"Vegax":
- {"IOS": 
+:Vegax:
+ :IOS: 
      "Not Found"
- },
- {"Android": 
-     "IDK"
- },
-},
 
-{"ArceusX":
- {"IOS": 
+ :Android: 
+     "I Don't Know"
+
+:ArceusX:
+ :IOS: 
      "Not Found"
- },
- {"Android": 
+
+ :Android: 
      "V1.2.1"
- },
-},
