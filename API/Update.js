@@ -1,4 +1,4 @@
 ```diff
-+ Added "link" "Version" in "/status"
++ Added "link" "Version" "Update-BOT" in "/status"
 - Close Fluxus in "/bypass"
 ```
