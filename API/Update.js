@@ -1,4 +1,11 @@
 ```diff
 + Added command "/script"
-/script game:BloxFruit , Blade Ball(Coming soon)
+BloxFruit 
+Blade Ball
+Pet Simulator
+
++ Added Leaderboard
+Blox Fruit
+Blade Ball
+Pet Simulator
 ```
