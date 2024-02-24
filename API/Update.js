@@ -1,4 +1,4 @@
 ```diff
-+ Added "link" "Version" "Update-BOT" in "/status"
-- Close Fluxus in "/bypass"
++ Added command "/script"
+/script game:BloxFruit , Blade Ball(Coming soon)
 ```
