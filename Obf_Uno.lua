@@ -19,14 +19,14 @@ end
 			SkillX = true,
 			SkillC = true,
 			SkillV = true,
-			SkillF = true
+			SkillF = true,
 		},
 		Stats = {
 			Auto_Melee = true,
 			Auto_Defense = true,
 			Auto_Sword = true,
 			Auto_Gun = true,
-			Auto_Devil_Fruit = true
+			Auto_Devil_Fruit = true,
 		},
 		SettingINFO = {
 			["AutoDisable_Text Damage"] = true,
@@ -34,7 +34,7 @@ end
 			BringMobs = true,
 			FastAttack = {
 				Toggle = true,
-				Value = "0.15"
+				Value = "0.15",
 			}
 		},
 		Main = {
@@ -42,7 +42,7 @@ end
 				FpsBooster = false,
 				Auto_Redeem = true,
 				Auto_Level = true,
-				Weapon = "Melee" -- Melee , Sword , BloxFruit.
+				Weapon = "Melee", -- Melee , Sword , BloxFruit.
 			},
 		
 			Auto_Factory = false,
@@ -56,11 +56,11 @@ end
 			Auto_Terrirshark = false,
 			Auto_VatChatKiDi = false,
 			Auto_CakePrince = false,
-			Auto_Bone = false
+			Auto_Bone = false,
 		},
 		UI = {
-			Button = true
-		}
+			Button = true,
+		},
 	}
 
 ]=]
@@ -72,14 +72,14 @@ if not _G.Settings then
 			SkillX = true,
 			SkillC = true,
 			SkillV = true,
-			SkillF = true
+			SkillF = true,
 		},
 		Stats = {
 			Auto_Melee = true,
 			Auto_Defense = true,
 			Auto_Sword = true,
 			Auto_Gun = true,
-			Auto_Devil_Fruit = true
+			Auto_Devil_Fruit = true,
 		},
 		SettingINFO = {
 			["AutoDisable_Text Damage"] = true,
@@ -87,7 +87,7 @@ if not _G.Settings then
 			BringMobs = true,
 			FastAttack = {
 				Toggle = true,
-				Value = "0.15"
+				Value = "0.15",
 			}
 		},
 		Main = {
@@ -95,7 +95,7 @@ if not _G.Settings then
 				FpsBooster = false,
 				Auto_Redeem = false,
 				Auto_Level = false,
-				Weapon = "Melee" -- Melee , Sword , BloxFruit.
+				Weapon = "Melee", -- Melee , Sword , BloxFruit.
 			},
 		
 			Auto_Factory = false,
@@ -109,11 +109,11 @@ if not _G.Settings then
 			Auto_Terrirshark = false,
 			Auto_VatChatKiDi = false,
 			Auto_CakePrince = false,
-			Auto_Bone = false
+			Auto_Bone = false,
 		},
 		UI = {
-			Button = true
-		}
+			Button = true,
+		},
 	}
 end
 
