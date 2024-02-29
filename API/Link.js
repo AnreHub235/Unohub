@@ -10,8 +10,8 @@
  Not Found
 
  :Android:
-     https://www.mediafire.com/file/0nmotlcysssoa9p/Original_Fluxus_2.610_32bit.apk/file
-     https://www.mediafire.com/file/eaj0vrznpl1wpi1/Original_Fluxus_2.610_64bit.apk/file
+     https://www.mediafire.com/file/2q3ss97rehasml2/Original_Fluxus_2.612_32bit.apk/file
+     64-bit died bruh
  
 :Delta:
  :IOS: 
