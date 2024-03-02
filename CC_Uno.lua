@@ -2390,8 +2390,6 @@ coroutine.wrap(YTZCAJC_fake_script)()
 local posX = 0
 local posY = 60
 local posZ = 0
-else
-end
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Create Tabs
     Tabs.Main:AddParagraph({
