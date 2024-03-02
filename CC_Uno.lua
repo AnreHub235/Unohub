@@ -2405,7 +2405,7 @@ local posZ = 0
     })
     DropdownSelectWeapon:SetValue('Melee')
     DropdownSelectWeapon:OnChanged(function(Value)
-        ChooseWeapon = Value or  .Main.Level.Weapon 
+        ChooseWeapon = Value
     end)
 
     task.spawn(function()
@@ -3262,12 +3262,6 @@ local ToggleCake = Tabs.Main:AddToggle("ToggleCake", {Title = "Auto Farm Cake Pr
 ToggleCake:OnChanged(function(Value)
  _G.CakePrince = Value
 end)
-
-if  .Main.Auto_Cake then
-	Options.ToggleCake:SetValue(true)
-else
-	Options.ToggleCake:SetValue(false)
-end
 
 spawn(function()
     while task.wait() do
@@ -4145,12 +4139,6 @@ end
         ToggleTushita:OnChanged(function(Value)
             AutoTushita = Value
         end)
-
-if  .Main.Auto_Tushita then
-        Options.ToggleTushita:SetValue(true)
-else
-	Options.ToggleTushita:SetValue(false)
-end
 
         local FaiFaoTushita = CFrame.new(-10238.875976563, 389.7912902832, -9549.7939453125)
         spawn(function()
