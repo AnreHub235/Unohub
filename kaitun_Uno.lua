@@ -462,7 +462,7 @@ task.spawn(C_25);
 -- StarterGui.Kaitun.Run
 local function C_26()
 local script = G2L["26"];
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AnreHub235/Unohub/main/Obf_Uno.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AnreHub235/Unohub/main/CC_Uno.lua"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AnreHub235/Unohub/main/QueueonTeleport/Kaitun"))()
 
 end;
