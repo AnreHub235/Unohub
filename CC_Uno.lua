@@ -1,4 +1,20 @@
+if identifyexecutor()~="Codex" then
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/GalacticHypernova/Guardian/main/MainProd"))()
+else
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/GalacticHypernova/Guardian/main/CodexTest"))()
+end
 
+--[=[
+
+██╗░░░██╗███╗░░██╗░█████╗░
+██║░░░██║████╗░██║██╔══██╗
+██║░░░██║██╔██╗██║██║░░██║
+██║░░░██║██║╚████║██║░░██║
+╚██████╔╝██║░╚███║╚█████╔╝
+░╚═════╝░╚═╝░░╚══╝░╚════╝░
+
+]=]
+ 
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
@@ -2442,7 +2458,7 @@ end
     end)
 
 
-    local ToggleAutoFarmLevel = Tabs.Main:AddToggle("ToggleAutoFarmLevel", {Title = "Auto Farm Level", Default = false })
+    local ToggleAutoFarmLevel = Tabs.Main:AddToggle("ToggleAutoFarmLevel", {Title = "Auto Farm Level", Default = true })
     ToggleAutoFarmLevel:OnChanged(function(Value)
         _G.AutoLevel = Value
     end)
