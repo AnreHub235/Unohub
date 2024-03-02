@@ -462,54 +462,6 @@ task.spawn(C_25);
 -- StarterGui.Kaitun.Run
 local function C_26()
 local script = G2L["26"];
-	_G.Settings = {
-		Skill = {
-			SKillZ = true,
-			SkillX = true,
-			SkillC = true,
-			SkillV = true,
-			SkillF = true
-		},
-		Stats = {
-			Auto_Melee = true,
-			Auto_Defense = true,
-			Auto_Sword = true,
-			Auto_Gun = true,
-			Auto_Devil_Fruit = true
-		},
-		SettingINFO = {
-			["AutoDisable_Text Damage"] = true,
-			BypassTP = false,
-			BringMobs = true,
-			FastAttack = {
-				Toggle = true,
-				Value = "0.15"
-			}
-		},
-		Main = {
-			Level = {
-				FpsBooster = false,
-				Auto_Redeem = true,
-				Auto_Level = true,
-				Weapon = "Melee" -- Melee , Sword , BloxFruit.
-			},
-		
-			Auto_Factory = false,
-			Auto_Tushita = false,
-			Auto_Yama = false,
-			Auto_HallowSycthe = false,
-			Auto_Mirage = false,
-			Auto_W = false,
-			Auto_Elite = false,
-			Auto_Piranha = false,
-			Auto_Terrirshark = false,
-			Auto_VatChatKiDi = false,
-			Auto_CakePrince = false,
-			Auto_Bone = false
-		},
-		UI = {
-			Button = false
-		}
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AnreHub235/Unohub/main/Obf_Uno.lua"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AnreHub235/Unohub/main/QueueonTeleport/Kaitun"))()
 
