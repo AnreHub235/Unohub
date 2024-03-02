@@ -1,9 +1,3 @@
-if identifyexecutor()~="Codex" then
-  loadstring(game:HttpGet("https://raw.githubusercontent.com/GalacticHypernova/Guardian/main/MainProd"))()
-else
-  loadstring(game:HttpGet("https://raw.githubusercontent.com/GalacticHypernova/Guardian/main/CodexTest"))()
-end
-
 --[=[
 
 ██╗░░░██╗███╗░░██╗░█████╗░
