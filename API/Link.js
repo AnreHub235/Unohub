@@ -10,6 +10,6 @@ https://cdn.discordapp.com/emojis/1206869032213684285.webp?size=48&quality=lossl
 https://cdn.discordapp.com/emojis/1209792076758126612.webp?size=48&quality=lossless&name=vegaxlogo **__VEGA X__** : https://link-target.net/1052601/vega-x-v4-v2614
 https://cdn.discordapp.com/emojis/1195893209881124925.webp?size=48&quality=lossless&name=trigonlogo **__TRIGON__** : https://link-hub.net/1052601/trigon-v2614
 
--> https://cdn.discordapp.com/emojis/1175308860655943710.webp?size=48&quality=lossless&name=fluxuslogo) **__FLUXUS__**  :
+-> (https://cdn.discordapp.com/emojis/1175308860655943710.webp?size=48&quality=lossless&name=fluxuslogo) **__FLUXUS__**  :
 **__32bit__** : https://link-target.net/901202/official-fluxus-v2614-32
 **__64bit__** : https://direct-link.net/901202/official-fluxus-v2614-64
