@@ -186,10 +186,10 @@ if game.PlaceId == 2753915549 then
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61163.8515625, 11.6796875, 1819.7841796875))
                 end
             elseif MyLevel == 450 or MyLevel <= 474 then
-                Mon = "God's Guard"
+                Mon = "God "s Guard"
                 LevelQuest = 1
                 NameQuest = "SkyExp1Quest"
-                NameMon = "God's Guard"
+                NameMon = "God "s Guard"
                 CFrameQuest = CFrame.new(-4721.88867, 843.874695, -1949.96643, 0.996191859, -0, -0.0871884301, 0, 1, -0, 0.0871884301, 0, 0.996191859)
                 CFrameMon = CFrame.new(-4710.04296875, 845.2769775390625, -1927.3079833984375)
                 if _G.AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
@@ -664,9 +664,9 @@ if game.PlaceId == 2753915549 then
         function TPReturner()
             local Site;
             if foundAnything == "" then
-                Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
+                Site = game.HttpService:JSONDecode(game:HttpGet( "https://games.roblox.com/v1/games/ " .. PlaceID ..  "/servers/Public?sortOrder=Asc&limit=100 "))
             else
-                Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
+                Site = game.HttpService:JSONDecode(game:HttpGet( "https://games.roblox.com/v1/games/ " .. PlaceID ..  "/servers/Public?sortOrder=Asc&limit=100&cursor= " .. foundAnything))
             end
             local ID = ""
             if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
@@ -722,29 +722,29 @@ if game.PlaceId == 2753915549 then
             pcall(function()
                 if IslandESP then 
                     if v.Name ~= "Sea" then
-                        if not v:FindFirstChild('NameEsp') then
-                            local bill = Instance.new('BillboardGui',v)
-                            bill.Name = 'NameEsp'
+                        if not v:FindFirstChild( "NameEsp ") then
+                            local bill = Instance.new( "BillboardGui ",v)
+                            bill.Name =  "NameEsp "
                             bill.ExtentsOffset = Vector3.new(0, 1, 0)
                             bill.Size = UDim2.new(1,200,1,30)
                             bill.Adornee = v
                             bill.AlwaysOnTop = true
-                            local name = Instance.new('TextLabel',bill)
+                            local name = Instance.new( "TextLabel ",bill)
                             name.Font = "GothamBold"
                             name.FontSize = "Size14"
                             name.TextWrapped = true
                             name.Size = UDim2.new(1,0,1,0)
-                            name.TextYAlignment = 'Top'
+                            name.TextYAlignment =  "Top "
                             name.BackgroundTransparency = 1
                             name.TextStrokeTransparency = 0.5
                             name.TextColor3 = Color3.fromRGB(255, 255, 255)
                         else
-                            v['NameEsp'].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
+                            v[ "NameEsp "].TextLabel.Text = (v.Name .. "   \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) .. " Distance ")
                         end
                     end
                 else
-                    if v:FindFirstChild('NameEsp') then
-                        v:FindFirstChild('NameEsp'):Destroy()
+                    if v:FindFirstChild( "NameEsp ") then
+                        v:FindFirstChild( "NameEsp "):Destroy()
                     end
                 end
             end)
@@ -759,24 +759,24 @@ local function round(n)
 end
 Number = math.random(1, 1000000)
 function UpdatePlayerChams()
-	for i,v in pairs(game:GetService'Players':GetChildren()) do
+	for i,v in pairs(game:GetService "Players ":GetChildren()) do
 		pcall(function()
 			if not isnil(v.Character) then
 				if ESPPlayer then
-					if not isnil(v.Character.Head) and not v.Character.Head:FindFirstChild('NameEsp'..Number) then
-						local bill = Instance.new('BillboardGui',v.Character.Head)
-						bill.Name = 'NameEsp'..Number
+					if not isnil(v.Character.Head) and not v.Character.Head:FindFirstChild( "NameEsp "..Number) then
+						local bill = Instance.new( "BillboardGui ",v.Character.Head)
+						bill.Name =  "NameEsp "..Number
 						bill.ExtentsOffset = Vector3.new(0, 1, 0)
 						bill.Size = UDim2.new(1,200,1,30)
 						bill.Adornee = v.Character.Head
 						bill.AlwaysOnTop = true
-						local name = Instance.new('TextLabel',bill)
+						local name = Instance.new( "TextLabel ",bill)
 						name.Font = Enum.Font.GothamSemibold
 						name.FontSize = "Size14"
 						name.TextWrapped = true
-						name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' Distance')
+						name.Text = (v.Name .. " \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) .. " Distance ")
 						name.Size = UDim2.new(1,0,1,0)
-						name.TextYAlignment = 'Top'
+						name.TextYAlignment =  "Top "
 						name.BackgroundTransparency = 1
 						name.TextStrokeTransparency = 0.5
 						if v.Team == game.Players.LocalPlayer.Team then
@@ -785,11 +785,11 @@ function UpdatePlayerChams()
 							name.TextColor3 = Color3.new(255,0,0)
 						end
 					else
-						v.Character.Head['NameEsp'..Number].TextLabel.Text = (v.Name ..' | '.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' Distance\nHealth : ' .. round(v.Character.Humanoid.Health*100/v.Character.Humanoid.MaxHealth) .. '%')
+						v.Character.Head[ "NameEsp "..Number].TextLabel.Text = (v.Name .. " |  ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) .. " Distance\nHealth :  " .. round(v.Character.Humanoid.Health*100/v.Character.Humanoid.MaxHealth) ..  "% ")
 					end
 				else
-					if v.Character.Head:FindFirstChild('NameEsp'..Number) then
-						v.Character.Head:FindFirstChild('NameEsp'..Number):Destroy()
+					if v.Character.Head:FindFirstChild( "NameEsp "..Number) then
+						v.Character.Head:FindFirstChild( "NameEsp "..Number):Destroy()
 					end
 				end
 			end
@@ -802,40 +802,40 @@ function UpdateChestChams()
 			if string.find(v.Name,"Chest") then
 				if ChestESP then
 					if string.find(v.Name,"Chest") then
-						if not v:FindFirstChild('NameEsp'..Number) then
-							local bill = Instance.new('BillboardGui',v)
-							bill.Name = 'NameEsp'..Number
+						if not v:FindFirstChild( "NameEsp "..Number) then
+							local bill = Instance.new( "BillboardGui ",v)
+							bill.Name =  "NameEsp "..Number
 							bill.ExtentsOffset = Vector3.new(0, 1, 0)
 							bill.Size = UDim2.new(1,200,1,30)
 							bill.Adornee = v
 							bill.AlwaysOnTop = true
-							local name = Instance.new('TextLabel',bill)
+							local name = Instance.new( "TextLabel ",bill)
 							name.Font = Enum.Font.GothamSemibold
 							name.FontSize = "Size14"
 							name.TextWrapped = true
 							name.Size = UDim2.new(1,0,1,0)
-							name.TextYAlignment = 'Top'
+							name.TextYAlignment =  "Top "
 							name.BackgroundTransparency = 1
 							name.TextStrokeTransparency = 0.5
 							if v.Name == "Chest1" then
 								name.TextColor3 = Color3.fromRGB(109, 109, 109)
-								name.Text = ("Chest 1" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
+								name.Text = ("Chest 1" .. " \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) .. " Distance ")
 							end
 							if v.Name == "Chest2" then
 								name.TextColor3 = Color3.fromRGB(173, 158, 21)
-								name.Text = ("Chest 2" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
+								name.Text = ("Chest 2" .. " \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) .. " Distance ")
 							end
 							if v.Name == "Chest3" then
 								name.TextColor3 = Color3.fromRGB(85, 255, 255)
-								name.Text = ("Chest 3" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
+								name.Text = ("Chest 3" .. " \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) .. " Distance ")
 							end
 						else
-							v['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
+							v[ "NameEsp "..Number].TextLabel.Text = (v.Name .. "   \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) .. " Distance ")
 						end
 					end
 				else
-					if v:FindFirstChild('NameEsp'..Number) then
-						v:FindFirstChild('NameEsp'..Number):Destroy()
+					if v:FindFirstChild( "NameEsp "..Number) then
+						v:FindFirstChild( "NameEsp "..Number):Destroy()
 					end
 				end
 			end
@@ -847,30 +847,30 @@ function UpdateDevilChams()
 		pcall(function()
 			if DevilFruitESP then
 				if string.find(v.Name, "Fruit") then   
-					if not v.Handle:FindFirstChild('NameEsp'..Number) then
-						local bill = Instance.new('BillboardGui',v.Handle)
-						bill.Name = 'NameEsp'..Number
+					if not v.Handle:FindFirstChild( "NameEsp "..Number) then
+						local bill = Instance.new( "BillboardGui ",v.Handle)
+						bill.Name =  "NameEsp "..Number
 						bill.ExtentsOffset = Vector3.new(0, 1, 0)
 						bill.Size = UDim2.new(1,200,1,30)
 						bill.Adornee = v.Handle
 						bill.AlwaysOnTop = true
-						local name = Instance.new('TextLabel',bill)
+						local name = Instance.new( "TextLabel ",bill)
 						name.Font = Enum.Font.GothamSemibold
 						name.FontSize = "Size14"
 						name.TextWrapped = true
 						name.Size = UDim2.new(1,0,1,0)
-						name.TextYAlignment = 'Top'
+						name.TextYAlignment =  "Top "
 						name.BackgroundTransparency = 1
 						name.TextStrokeTransparency = 0.5
 						name.TextColor3 = Color3.fromRGB(255, 255, 255)
-						name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' Distance')
+						name.Text = (v.Name .. " \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) .. " Distance ")
 					else
-						v.Handle['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' Distance')
+						v.Handle[ "NameEsp "..Number].TextLabel.Text = (v.Name .. "   \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) .. " Distance ")
 					end
 				end
 			else
-				if v.Handle:FindFirstChild('NameEsp'..Number) then
-					v.Handle:FindFirstChild('NameEsp'..Number):Destroy()
+				if v.Handle:FindFirstChild( "NameEsp "..Number) then
+					v.Handle:FindFirstChild( "NameEsp "..Number):Destroy()
 				end
 			end
 		end)
@@ -881,36 +881,36 @@ function UpdateFlowerChams()
 		pcall(function()
 			if v.Name == "Flower2" or v.Name == "Flower1" then
 				if FlowerESP then 
-					if not v:FindFirstChild('NameEsp'..Number) then
-						local bill = Instance.new('BillboardGui',v)
-						bill.Name = 'NameEsp'..Number
+					if not v:FindFirstChild( "NameEsp "..Number) then
+						local bill = Instance.new( "BillboardGui ",v)
+						bill.Name =  "NameEsp "..Number
 						bill.ExtentsOffset = Vector3.new(0, 1, 0)
 						bill.Size = UDim2.new(1,200,1,30)
 						bill.Adornee = v
 						bill.AlwaysOnTop = true
-						local name = Instance.new('TextLabel',bill)
+						local name = Instance.new( "TextLabel ",bill)
 						name.Font = Enum.Font.GothamSemibold
 						name.FontSize = "Size14"
 						name.TextWrapped = true
 						name.Size = UDim2.new(1,0,1,0)
-						name.TextYAlignment = 'Top'
+						name.TextYAlignment =  "Top "
 						name.BackgroundTransparency = 1
 						name.TextStrokeTransparency = 0.5
 						name.TextColor3 = Color3.fromRGB(255, 0, 0)
 						if v.Name == "Flower1" then 
-							name.Text = ("Blue Flower" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
+							name.Text = ("Blue Flower" .. " \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) .. " Distance ")
 							name.TextColor3 = Color3.fromRGB(0, 0, 255)
 						end
 						if v.Name == "Flower2" then
-							name.Text = ("Red Flower" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
+							name.Text = ("Red Flower" .. " \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) .. " Distance ")
 							name.TextColor3 = Color3.fromRGB(255, 0, 0)
 						end
 					else
-						v['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
+						v[ "NameEsp "..Number].TextLabel.Text = (v.Name .. "   \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) .. " Distance ")
 					end
 				else
-					if v:FindFirstChild('NameEsp'..Number) then
-					v:FindFirstChild('NameEsp'..Number):Destroy()
+					if v:FindFirstChild( "NameEsp "..Number) then
+					v:FindFirstChild( "NameEsp "..Number):Destroy()
 					end
 				end
 			end   
@@ -921,29 +921,29 @@ function UpdateRealFruitChams()
 	for i,v in pairs(game.Workspace.AppleSpawner:GetChildren()) do
 		if v:IsA("Tool") then
 			if RealFruitESP then 
-				if not v.Handle:FindFirstChild('NameEsp'..Number) then
-					local bill = Instance.new('BillboardGui',v.Handle)
-					bill.Name = 'NameEsp'..Number
+				if not v.Handle:FindFirstChild( "NameEsp "..Number) then
+					local bill = Instance.new( "BillboardGui ",v.Handle)
+					bill.Name =  "NameEsp "..Number
 					bill.ExtentsOffset = Vector3.new(0, 1, 0)
 					bill.Size = UDim2.new(1,200,1,30)
 					bill.Adornee = v.Handle
 					bill.AlwaysOnTop = true
-					local name = Instance.new('TextLabel',bill)
+					local name = Instance.new( "TextLabel ",bill)
 					name.Font = Enum.Font.GothamSemibold
 					name.FontSize = "Size14"
 					name.TextWrapped = true
 					name.Size = UDim2.new(1,0,1,0)
-					name.TextYAlignment = 'Top'
+					name.TextYAlignment =  "Top "
 					name.BackgroundTransparency = 1
 					name.TextStrokeTransparency = 0.5
 					name.TextColor3 = Color3.fromRGB(255, 0, 0)
-					name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' Distance')
+					name.Text = (v.Name .. " \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) .. " Distance ")
 				else
-					v.Handle['NameEsp'..Number].TextLabel.Text = (v.Name ..' '.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' Distance')
+					v.Handle[ "NameEsp "..Number].TextLabel.Text = (v.Name .. "  ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) .. " Distance ")
 				end
 			else
-				if v.Handle:FindFirstChild('NameEsp'..Number) then
-					v.Handle:FindFirstChild('NameEsp'..Number):Destroy()
+				if v.Handle:FindFirstChild( "NameEsp "..Number) then
+					v.Handle:FindFirstChild( "NameEsp "..Number):Destroy()
 				end
 			end 
 		end
@@ -951,29 +951,29 @@ function UpdateRealFruitChams()
 	for i,v in pairs(game.Workspace.PineappleSpawner:GetChildren()) do
 		if v:IsA("Tool") then
 			if RealFruitESP then 
-				if not v.Handle:FindFirstChild('NameEsp'..Number) then
-					local bill = Instance.new('BillboardGui',v.Handle)
-					bill.Name = 'NameEsp'..Number
+				if not v.Handle:FindFirstChild( "NameEsp "..Number) then
+					local bill = Instance.new( "BillboardGui ",v.Handle)
+					bill.Name =  "NameEsp "..Number
 					bill.ExtentsOffset = Vector3.new(0, 1, 0)
 					bill.Size = UDim2.new(1,200,1,30)
 					bill.Adornee = v.Handle
 					bill.AlwaysOnTop = true
-					local name = Instance.new('TextLabel',bill)
+					local name = Instance.new( "TextLabel ",bill)
 					name.Font = Enum.Font.GothamSemibold
 					name.FontSize = "Size14"
 					name.TextWrapped = true
 					name.Size = UDim2.new(1,0,1,0)
-					name.TextYAlignment = 'Top'
+					name.TextYAlignment =  "Top "
 					name.BackgroundTransparency = 1
 					name.TextStrokeTransparency = 0.5
 					name.TextColor3 = Color3.fromRGB(255, 174, 0)
-					name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' Distance')
+					name.Text = (v.Name .. " \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) .. " Distance ")
 				else
-					v.Handle['NameEsp'..Number].TextLabel.Text = (v.Name ..' '.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' Distance')
+					v.Handle[ "NameEsp "..Number].TextLabel.Text = (v.Name .. "  ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) .. " Distance ")
 				end
 			else
-				if v.Handle:FindFirstChild('NameEsp'..Number) then
-					v.Handle:FindFirstChild('NameEsp'..Number):Destroy()
+				if v.Handle:FindFirstChild( "NameEsp "..Number) then
+					v.Handle:FindFirstChild( "NameEsp "..Number):Destroy()
 				end
 			end 
 		end
@@ -981,29 +981,29 @@ function UpdateRealFruitChams()
 	for i,v in pairs(game.Workspace.BananaSpawner:GetChildren()) do
 		if v:IsA("Tool") then
 			if RealFruitESP then 
-				if not v.Handle:FindFirstChild('NameEsp'..Number) then
-					local bill = Instance.new('BillboardGui',v.Handle)
-					bill.Name = 'NameEsp'..Number
+				if not v.Handle:FindFirstChild( "NameEsp "..Number) then
+					local bill = Instance.new( "BillboardGui ",v.Handle)
+					bill.Name =  "NameEsp "..Number
 					bill.ExtentsOffset = Vector3.new(0, 1, 0)
 					bill.Size = UDim2.new(1,200,1,30)
 					bill.Adornee = v.Handle
 					bill.AlwaysOnTop = true
-					local name = Instance.new('TextLabel',bill)
+					local name = Instance.new( "TextLabel ",bill)
 					name.Font = Enum.Font.GothamSemibold
 					name.FontSize = "Size14"
 					name.TextWrapped = true
 					name.Size = UDim2.new(1,0,1,0)
-					name.TextYAlignment = 'Top'
+					name.TextYAlignment =  "Top "
 					name.BackgroundTransparency = 1
 					name.TextStrokeTransparency = 0.5
 					name.TextColor3 = Color3.fromRGB(251, 255, 0)
-					name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' Distance')
+					name.Text = (v.Name .. " \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) .. " Distance ")
 				else
-					v.Handle['NameEsp'..Number].TextLabel.Text = (v.Name ..' '.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' Distance')
+					v.Handle[ "NameEsp "..Number].TextLabel.Text = (v.Name .. "  ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) .. " Distance ")
 				end
 			else
-				if v.Handle:FindFirstChild('NameEsp'..Number) then
-					v.Handle:FindFirstChild('NameEsp'..Number):Destroy()
+				if v.Handle:FindFirstChild( "NameEsp "..Number) then
+					v.Handle:FindFirstChild( "NameEsp "..Number):Destroy()
 				end
 			end 
 		end
@@ -1015,29 +1015,29 @@ function UpdateIslandESP()
             pcall(function()
                 if IslandESP then 
                     if v.Name ~= "Sea" then
-                        if not v:FindFirstChild('NameEsp') then
-                            local bill = Instance.new('BillboardGui',v)
-                            bill.Name = 'NameEsp'
+                        if not v:FindFirstChild( "NameEsp ") then
+                            local bill = Instance.new( "BillboardGui ",v)
+                            bill.Name =  "NameEsp "
                             bill.ExtentsOffset = Vector3.new(0, 1, 0)
                             bill.Size = UDim2.new(1,200,1,30)
                             bill.Adornee = v
                             bill.AlwaysOnTop = true
-                            local name = Instance.new('TextLabel',bill)
+                            local name = Instance.new( "TextLabel ",bill)
                             name.Font = "GothamBold"
                             name.FontSize = "Size14"
                             name.TextWrapped = true
                             name.Size = UDim2.new(1,0,1,0)
-                            name.TextYAlignment = 'Top'
+                            name.TextYAlignment =  "Top "
                             name.BackgroundTransparency = 1
                             name.TextStrokeTransparency = 0.5
                             name.TextColor3 = Color3.fromRGB(255, 255, 255)
                         else
-                            v['NameEsp'].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
+                            v[ "NameEsp "].TextLabel.Text = (v.Name .. "   \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) .. " Distance ")
                         end
                     end
                 else
-                    if v:FindFirstChild('NameEsp') then
-                        v:FindFirstChild('NameEsp'):Destroy()
+                    if v:FindFirstChild( "NameEsp ") then
+                        v:FindFirstChild( "NameEsp "):Destroy()
                     end
                 end
             end)
@@ -1052,24 +1052,24 @@ local function round(n)
 end
 Number = math.random(1, 1000000)
 function UpdatePlayerChams()
-	for i,v in pairs(game:GetService'Players':GetChildren()) do
+	for i,v in pairs(game:GetService "Players ":GetChildren()) do
 		pcall(function()
 			if not isnil(v.Character) then
 				if ESPPlayer then
-					if not isnil(v.Character.Head) and not v.Character.Head:FindFirstChild('NameEsp'..Number) then
-						local bill = Instance.new('BillboardGui',v.Character.Head)
-						bill.Name = 'NameEsp'..Number
+					if not isnil(v.Character.Head) and not v.Character.Head:FindFirstChild( "NameEsp "..Number) then
+						local bill = Instance.new( "BillboardGui ",v.Character.Head)
+						bill.Name =  "NameEsp "..Number
 						bill.ExtentsOffset = Vector3.new(0, 1, 0)
 						bill.Size = UDim2.new(1,200,1,30)
 						bill.Adornee = v.Character.Head
 						bill.AlwaysOnTop = true
-						local name = Instance.new('TextLabel',bill)
+						local name = Instance.new( "TextLabel ",bill)
 						name.Font = Enum.Font.GothamSemibold
 						name.FontSize = "Size14"
 						name.TextWrapped = true
-						name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' Distance')
+						name.Text = (v.Name .. " \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) .. " Distance ")
 						name.Size = UDim2.new(1,0,1,0)
-						name.TextYAlignment = 'Top'
+						name.TextYAlignment =  "Top "
 						name.BackgroundTransparency = 1
 						name.TextStrokeTransparency = 0.5
 						if v.Team == game.Players.LocalPlayer.Team then
@@ -1078,11 +1078,11 @@ function UpdatePlayerChams()
 							name.TextColor3 = Color3.new(255,0,0)
 						end
 					else
-						v.Character.Head['NameEsp'..Number].TextLabel.Text = (v.Name ..' | '.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' Distance\nHealth : ' .. round(v.Character.Humanoid.Health*100/v.Character.Humanoid.MaxHealth) .. '%')
+						v.Character.Head[ "NameEsp "..Number].TextLabel.Text = (v.Name .. " |  ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) .. " Distance\nHealth :  " .. round(v.Character.Humanoid.Health*100/v.Character.Humanoid.MaxHealth) ..  "% ")
 					end
 				else
-					if v.Character.Head:FindFirstChild('NameEsp'..Number) then
-						v.Character.Head:FindFirstChild('NameEsp'..Number):Destroy()
+					if v.Character.Head:FindFirstChild( "NameEsp "..Number) then
+						v.Character.Head:FindFirstChild( "NameEsp "..Number):Destroy()
 					end
 				end
 			end
@@ -1095,40 +1095,40 @@ function UpdateChestChams()
 			if string.find(v.Name,"Chest") then
 				if ChestESP then
 					if string.find(v.Name,"Chest") then
-						if not v:FindFirstChild('NameEsp'..Number) then
-							local bill = Instance.new('BillboardGui',v)
-							bill.Name = 'NameEsp'..Number
+						if not v:FindFirstChild( "NameEsp "..Number) then
+							local bill = Instance.new( "BillboardGui ",v)
+							bill.Name =  "NameEsp "..Number
 							bill.ExtentsOffset = Vector3.new(0, 1, 0)
 							bill.Size = UDim2.new(1,200,1,30)
 							bill.Adornee = v
 							bill.AlwaysOnTop = true
-							local name = Instance.new('TextLabel',bill)
+							local name = Instance.new( "TextLabel ",bill)
 							name.Font = Enum.Font.GothamSemibold
 							name.FontSize = "Size14"
 							name.TextWrapped = true
 							name.Size = UDim2.new(1,0,1,0)
-							name.TextYAlignment = 'Top'
+							name.TextYAlignment =  "Top "
 							name.BackgroundTransparency = 1
 							name.TextStrokeTransparency = 0.5
 							if v.Name == "Chest1" then
 								name.TextColor3 = Color3.fromRGB(109, 109, 109)
-								name.Text = ("Chest 1" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
+								name.Text = ("Chest 1" .. " \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) .. " Distance ")
 							end
 							if v.Name == "Chest2" then
 								name.TextColor3 = Color3.fromRGB(173, 158, 21)
-								name.Text = ("Chest 2" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
+								name.Text = ("Chest 2" .. " \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) .. " Distance ")
 							end
 							if v.Name == "Chest3" then
 								name.TextColor3 = Color3.fromRGB(85, 255, 255)
-								name.Text = ("Chest 3" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
+								name.Text = ("Chest 3" .. " \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) .. " Distance ")
 							end
 						else
-							v['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
+							v[ "NameEsp "..Number].TextLabel.Text = (v.Name .. "   \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) .. " Distance ")
 						end
 					end
 				else
-					if v:FindFirstChild('NameEsp'..Number) then
-						v:FindFirstChild('NameEsp'..Number):Destroy()
+					if v:FindFirstChild( "NameEsp "..Number) then
+						v:FindFirstChild( "NameEsp "..Number):Destroy()
 					end
 				end
 			end
@@ -1140,30 +1140,30 @@ function UpdateDevilChams()
 		pcall(function()
 			if DevilFruitESP then
 				if string.find(v.Name, "Fruit") then   
-					if not v.Handle:FindFirstChild('NameEsp'..Number) then
-						local bill = Instance.new('BillboardGui',v.Handle)
-						bill.Name = 'NameEsp'..Number
+					if not v.Handle:FindFirstChild( "NameEsp "..Number) then
+						local bill = Instance.new( "BillboardGui ",v.Handle)
+						bill.Name =  "NameEsp "..Number
 						bill.ExtentsOffset = Vector3.new(0, 1, 0)
 						bill.Size = UDim2.new(1,200,1,30)
 						bill.Adornee = v.Handle
 						bill.AlwaysOnTop = true
-						local name = Instance.new('TextLabel',bill)
+						local name = Instance.new( "TextLabel ",bill)
 						name.Font = Enum.Font.GothamSemibold
 						name.FontSize = "Size14"
 						name.TextWrapped = true
 						name.Size = UDim2.new(1,0,1,0)
-						name.TextYAlignment = 'Top'
+						name.TextYAlignment =  "Top "
 						name.BackgroundTransparency = 1
 						name.TextStrokeTransparency = 0.5
 						name.TextColor3 = Color3.fromRGB(255, 255, 255)
-						name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' Distance')
+						name.Text = (v.Name .. " \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) .. " Distance ")
 					else
-						v.Handle['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' Distance')
+						v.Handle[ "NameEsp "..Number].TextLabel.Text = (v.Name .. "   \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) .. " Distance ")
 					end
 				end
 			else
-				if v.Handle:FindFirstChild('NameEsp'..Number) then
-					v.Handle:FindFirstChild('NameEsp'..Number):Destroy()
+				if v.Handle:FindFirstChild( "NameEsp "..Number) then
+					v.Handle:FindFirstChild( "NameEsp "..Number):Destroy()
 				end
 			end
 		end)
@@ -1174,36 +1174,36 @@ function UpdateFlowerChams()
 		pcall(function()
 			if v.Name == "Flower2" or v.Name == "Flower1" then
 				if FlowerESP then 
-					if not v:FindFirstChild('NameEsp'..Number) then
-						local bill = Instance.new('BillboardGui',v)
-						bill.Name = 'NameEsp'..Number
+					if not v:FindFirstChild( "NameEsp "..Number) then
+						local bill = Instance.new( "BillboardGui ",v)
+						bill.Name =  "NameEsp "..Number
 						bill.ExtentsOffset = Vector3.new(0, 1, 0)
 						bill.Size = UDim2.new(1,200,1,30)
 						bill.Adornee = v
 						bill.AlwaysOnTop = true
-						local name = Instance.new('TextLabel',bill)
+						local name = Instance.new( "TextLabel ",bill)
 						name.Font = Enum.Font.GothamSemibold
 						name.FontSize = "Size14"
 						name.TextWrapped = true
 						name.Size = UDim2.new(1,0,1,0)
-						name.TextYAlignment = 'Top'
+						name.TextYAlignment =  "Top "
 						name.BackgroundTransparency = 1
 						name.TextStrokeTransparency = 0.5
 						name.TextColor3 = Color3.fromRGB(255, 0, 0)
 						if v.Name == "Flower1" then 
-							name.Text = ("Blue Flower" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
+							name.Text = ("Blue Flower" .. " \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) .. " Distance ")
 							name.TextColor3 = Color3.fromRGB(0, 0, 255)
 						end
 						if v.Name == "Flower2" then
-							name.Text = ("Red Flower" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
+							name.Text = ("Red Flower" .. " \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) .. " Distance ")
 							name.TextColor3 = Color3.fromRGB(255, 0, 0)
 						end
 					else
-						v['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
+						v[ "NameEsp "..Number].TextLabel.Text = (v.Name .. "   \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) .. " Distance ")
 					end
 				else
-					if v:FindFirstChild('NameEsp'..Number) then
-					v:FindFirstChild('NameEsp'..Number):Destroy()
+					if v:FindFirstChild( "NameEsp "..Number) then
+					v:FindFirstChild( "NameEsp "..Number):Destroy()
 					end
 				end
 			end   
@@ -1214,29 +1214,29 @@ function UpdateRealFruitChams()
 	for i,v in pairs(game.Workspace.AppleSpawner:GetChildren()) do
 		if v:IsA("Tool") then
 			if RealFruitESP then 
-				if not v.Handle:FindFirstChild('NameEsp'..Number) then
-					local bill = Instance.new('BillboardGui',v.Handle)
-					bill.Name = 'NameEsp'..Number
+				if not v.Handle:FindFirstChild( "NameEsp "..Number) then
+					local bill = Instance.new( "BillboardGui ",v.Handle)
+					bill.Name =  "NameEsp "..Number
 					bill.ExtentsOffset = Vector3.new(0, 1, 0)
 					bill.Size = UDim2.new(1,200,1,30)
 					bill.Adornee = v.Handle
 					bill.AlwaysOnTop = true
-					local name = Instance.new('TextLabel',bill)
+					local name = Instance.new( "TextLabel ",bill)
 					name.Font = Enum.Font.GothamSemibold
 					name.FontSize = "Size14"
 					name.TextWrapped = true
 					name.Size = UDim2.new(1,0,1,0)
-					name.TextYAlignment = 'Top'
+					name.TextYAlignment =  "Top "
 					name.BackgroundTransparency = 1
 					name.TextStrokeTransparency = 0.5
 					name.TextColor3 = Color3.fromRGB(255, 0, 0)
-					name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' Distance')
+					name.Text = (v.Name .. " \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) .. " Distance ")
 				else
-					v.Handle['NameEsp'..Number].TextLabel.Text = (v.Name ..' '.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' Distance')
+					v.Handle[ "NameEsp "..Number].TextLabel.Text = (v.Name .. "  ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) .. " Distance ")
 				end
 			else
-				if v.Handle:FindFirstChild('NameEsp'..Number) then
-					v.Handle:FindFirstChild('NameEsp'..Number):Destroy()
+				if v.Handle:FindFirstChild( "NameEsp "..Number) then
+					v.Handle:FindFirstChild( "NameEsp "..Number):Destroy()
 				end
 			end 
 		end
@@ -1244,29 +1244,29 @@ function UpdateRealFruitChams()
 	for i,v in pairs(game.Workspace.PineappleSpawner:GetChildren()) do
 		if v:IsA("Tool") then
 			if RealFruitESP then 
-				if not v.Handle:FindFirstChild('NameEsp'..Number) then
-					local bill = Instance.new('BillboardGui',v.Handle)
-					bill.Name = 'NameEsp'..Number
+				if not v.Handle:FindFirstChild( "NameEsp "..Number) then
+					local bill = Instance.new( "BillboardGui ",v.Handle)
+					bill.Name =  "NameEsp "..Number
 					bill.ExtentsOffset = Vector3.new(0, 1, 0)
 					bill.Size = UDim2.new(1,200,1,30)
 					bill.Adornee = v.Handle
 					bill.AlwaysOnTop = true
-					local name = Instance.new('TextLabel',bill)
+					local name = Instance.new( "TextLabel ",bill)
 					name.Font = Enum.Font.GothamSemibold
 					name.FontSize = "Size14"
 					name.TextWrapped = true
 					name.Size = UDim2.new(1,0,1,0)
-					name.TextYAlignment = 'Top'
+					name.TextYAlignment =  "Top "
 					name.BackgroundTransparency = 1
 					name.TextStrokeTransparency = 0.5
 					name.TextColor3 = Color3.fromRGB(255, 174, 0)
-					name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' Distance')
+					name.Text = (v.Name .. " \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) .. " Distance ")
 				else
-					v.Handle['NameEsp'..Number].TextLabel.Text = (v.Name ..' '.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' Distance')
+					v.Handle[ "NameEsp "..Number].TextLabel.Text = (v.Name .. "  ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) .. " Distance ")
 				end
 			else
-				if v.Handle:FindFirstChild('NameEsp'..Number) then
-					v.Handle:FindFirstChild('NameEsp'..Number):Destroy()
+				if v.Handle:FindFirstChild( "NameEsp "..Number) then
+					v.Handle:FindFirstChild( "NameEsp "..Number):Destroy()
 				end
 			end 
 		end
@@ -1274,29 +1274,29 @@ function UpdateRealFruitChams()
 	for i,v in pairs(game.Workspace.BananaSpawner:GetChildren()) do
 		if v:IsA("Tool") then
 			if RealFruitESP then 
-				if not v.Handle:FindFirstChild('NameEsp'..Number) then
-					local bill = Instance.new('BillboardGui',v.Handle)
-					bill.Name = 'NameEsp'..Number
+				if not v.Handle:FindFirstChild( "NameEsp "..Number) then
+					local bill = Instance.new( "BillboardGui ",v.Handle)
+					bill.Name =  "NameEsp "..Number
 					bill.ExtentsOffset = Vector3.new(0, 1, 0)
 					bill.Size = UDim2.new(1,200,1,30)
 					bill.Adornee = v.Handle
 					bill.AlwaysOnTop = true
-					local name = Instance.new('TextLabel',bill)
+					local name = Instance.new( "TextLabel ",bill)
 					name.Font = Enum.Font.GothamSemibold
 					name.FontSize = "Size14"
 					name.TextWrapped = true
 					name.Size = UDim2.new(1,0,1,0)
-					name.TextYAlignment = 'Top'
+					name.TextYAlignment =  "Top "
 					name.BackgroundTransparency = 1
 					name.TextStrokeTransparency = 0.5
 					name.TextColor3 = Color3.fromRGB(251, 255, 0)
-					name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' Distance')
+					name.Text = (v.Name .. " \n ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) .. " Distance ")
 				else
-					v.Handle['NameEsp'..Number].TextLabel.Text = (v.Name ..' '.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' Distance')
+					v.Handle[ "NameEsp "..Number].TextLabel.Text = (v.Name .. "  ".. round((game:GetService( "Players ").LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) .. " Distance ")
 				end
 			else
-				if v.Handle:FindFirstChild('NameEsp'..Number) then
-					v.Handle:FindFirstChild('NameEsp'..Number):Destroy()
+				if v.Handle:FindFirstChild( "NameEsp "..Number) then
+					v.Handle:FindFirstChild( "NameEsp "..Number):Destroy()
 				end
 			end 
 		end
@@ -1308,7 +1308,7 @@ spawn(function()
         pcall(function()
             if MobESP then
                 for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                    if v:FindFirstChild('HumanoidRootPart') then
+                    if v:FindFirstChild( "HumanoidRootPart ") then
                         if not v:FindFirstChild("MobEap") then
                             local BillboardGui = Instance.new("BillboardGui")
                             local TextLabel = Instance.new("TextLabel")
@@ -1350,7 +1350,7 @@ spawn(function()
         pcall(function()
             if SeaESP then
                 for i,v in pairs(game:GetService("Workspace").SeaBeasts:GetChildren()) do
-                    if v:FindFirstChild('HumanoidRootPart') then
+                    if v:FindFirstChild( "HumanoidRootPart ") then
                         if not v:FindFirstChild("Seaesps") then
                             local BillboardGui = Instance.new("BillboardGui")
                             local TextLabel = Instance.new("TextLabel")
@@ -1392,7 +1392,7 @@ spawn(function()
         pcall(function()
             if NpcESP then
                 for i,v in pairs(game:GetService("Workspace").NPCs:GetChildren()) do
-                    if v:FindFirstChild('HumanoidRootPart') then
+                    if v:FindFirstChild( "HumanoidRootPart ") then
                         if not v:FindFirstChild("NpcEspes") then
                             local BillboardGui = Instance.new("BillboardGui")
                             local TextLabel = Instance.new("TextLabel")
@@ -1467,7 +1467,7 @@ end)
         end
     end
     
-    local LocalPlayer = game:GetService'Players'.LocalPlayer
+    local LocalPlayer = game:GetService "Players ".LocalPlayer
     local originalstam = LocalPlayer.Character.Energy.Value
     function infinitestam()
         LocalPlayer.Character.Energy.Changed:connect(function()
@@ -1509,7 +1509,7 @@ end)
     
     
     function fly()
-        local mouse=game:GetService("Players").LocalPlayer:GetMouse''
+        local mouse=game:GetService("Players").LocalPlayer:GetMouse " "
         localplayer=game:GetService("Players").LocalPlayer
         game:GetService("Players").LocalPlayer.Character:WaitForChild("HumanoidRootPart")
         local torso = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
@@ -1599,8 +1599,8 @@ end)
     end
     
     function Click()
-        game:GetService'VirtualUser':CaptureController()
-        game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+        game:GetService "VirtualUser ":CaptureController()
+        game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
     end
     
     function AutoHaki()
@@ -1878,8 +1878,8 @@ getgenv().HyperCahayas = function(p)
     game:GetService("RunService").RenderStepped:Connect(function()
         if _G.AutoClick or Fastattack then
              pcall(function()
-                game:GetService'VirtualUser':CaptureController()
-			    game:GetService'VirtualUser':Button1Down(Vector2.new(0,1,0,1))
+                game:GetService "VirtualUser ":CaptureController()
+			    game:GetService "VirtualUser ":Button1Down(Vector2.new(0,1,0,1))
             end)
         end
     end)
@@ -1991,7 +1991,7 @@ local DropdownSelectWeapon = Tabs.Main:AddDropdown("DropdownSelectWeapon", {
     Multi = false,
     Default = 1,
 })
-    DropdownSelectWeapon:SetValue('Melee')
+    DropdownSelectWeapon:SetValue( "Melee ")
     DropdownSelectWeapon:OnChanged(function(Value)
 _G.SelectWeapon = Value
     end)
@@ -2278,8 +2278,8 @@ local ToggleFastAttack = Tabs.Main:AddToggle("ToggleFastAttack", {
                                                 v.Head.CanCollide = false
                                                 v.HumanoidRootPart.Size = Vector3.new(70,70,70)
                                                 StartMagnet = true
-                                                game:GetService'VirtualUser':CaptureController()
-                                                game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                                game:GetService "VirtualUser ":CaptureController()
+                                                game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
                                             until not _G.AutoFarm or v.Humanoid.Health <= 0 or not v.Parent or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false
                                         else
                                             StartMagnet = false
@@ -2311,8 +2311,8 @@ local ToggleFastAttack = Tabs.Main:AddToggle("ToggleFastAttack", {
                                                     v.Head.CanCollide = false
                                                     v.HumanoidRootPart.Size = Vector3.new(70,70,70)
                                                     StartMagnet = true
-                                                    game:GetService'VirtualUser':CaptureController()
-                                                    game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                                    game:GetService "VirtualUser ":CaptureController()
+                                                    game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
                                                 until not _G.AutoFarm or v.Humanoid.Health <= 0 or not v.Parent or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false
                                             else
                                                 StartMagnet = false
@@ -2829,8 +2829,8 @@ spawn(function()
                                 v.Head.CanCollide = false
                                 v.HumanoidRootPart.Size = Vector3.new(80,80,80)
                                 HyperCahaya(v.HumanoidRootPart.CFrame*CFrame.new(PosX, PosY, PosZ))
-                                game:GetService'VirtualUser':CaptureController()
-                                game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                game:GetService "VirtualUser ":CaptureController()
+                                game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
                                 sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
                             until v.Humanoid.Health <= 0 or _G.AutoAllBoss == false or not v.Parent
                         end
@@ -3261,8 +3261,8 @@ end)
                                                                                 end
                                                                                 PosMon = v.HumanoidRootPart.CFrame
                                                                                 if not _G.FastAttack then
-                                                                                    game:GetService 'VirtualUser':CaptureController()
-                                                                                    game:GetService 'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                                                                    game:GetService  "VirtualUser ":CaptureController()
+                                                                                    game:GetService  "VirtualUser ":Button1Down(Vector2.new(1280, 672))
                                                                                 end
                                                                                 v.HumanoidRootPart.Size = Vector3.new(80, 80, 80)
                                                                                 v.Humanoid.JumpPower = 0
@@ -3313,8 +3313,8 @@ end)
                                                                                 end
                                                                                 PosMon = v.HumanoidRootPart.CFrame
                                                                                 if not _G.FastAttack then
-                                                                                    game:GetService 'VirtualUser':CaptureController()
-                                                                                    game:GetService 'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                                                                    game:GetService  "VirtualUser ":CaptureController()
+                                                                                    game:GetService  "VirtualUser ":Button1Down(Vector2.new(1280, 672))
                                                                                 end
                                                                                 v.HumanoidRootPart.Size = Vector3.new(80, 80, 80)
                                                                                 v.Humanoid.JumpPower = 0
@@ -3404,8 +3404,8 @@ end)
                                                                                     end
                                                                                     PosMon = v.HumanoidRootPart.CFrame
                                                                                     if not _G.FastAttack then
-                                                                                        game:GetService 'VirtualUser':CaptureController()
-                                                                                        game:GetService 'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                                                                        game:GetService  "VirtualUser ":CaptureController()
+                                                                                        game:GetService  "VirtualUser ":Button1Down(Vector2.new(1280, 672))
                                                                                     end
                                                                                     v.HumanoidRootPart.Size = Vector3.new(80, 80, 80)
                                                                                     v.Humanoid.JumpPower = 0
@@ -3463,8 +3463,8 @@ end)
                                                                             end
                                                                             PosMon = v.HumanoidRootPart.CFrame
                                                                             if not _G.FastAttack then
-                                                                                game:GetService 'VirtualUser':CaptureController()
-                                                                                game:GetService 'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                                                                game:GetService  "VirtualUser ":CaptureController()
+                                                                                game:GetService  "VirtualUser ":Button1Down(Vector2.new(1280, 672))
                                                                             end
                                                                             v.HumanoidRootPart.Size = Vector3.new(80, 80, 80)
                                                                             v.Humanoid.JumpPower = 0
@@ -3552,10 +3552,10 @@ end)
     spawn(function()
         pcall(function()
             while wait() do
-    if game.Workspace._WorldOrigin.Locations:FindFirstChild('Mirage Island') then
-    Mirragecheck:Set('ðŸï¸: Mystic Island Spawning')
+    if game.Workspace._WorldOrigin.Locations:FindFirstChild( "Mirage Island ") then
+    Mirragecheck:Set( "ðŸï¸: Mystic Island Spawning ")
     else
-      Mirragecheck:Set('âŒ: Mystic Island Not Found ' )end
+      Mirragecheck:Set( "âŒ: Mystic Island Not Found  " )end
             end
         end)
 end)
@@ -4871,7 +4871,7 @@ spawn(function()
     
     M:AddSeperator(" Sea Beast ")
  
-    M:AddToggle('Kill Sea Beast', false, function(value)
+    M:AddToggle( "Kill Sea Beast ", false, function(value)
     _G.AutoSeaBest = value
     StopTween(_G.AutoFarmSeabaest)
     end)
@@ -5000,7 +5000,7 @@ end)
 
 
 
-M:AddToggle('Kill Sea Beast Hop', false, function(value)
+M:AddToggle( "Kill Sea Beast Hop ", false, function(value)
     _G.AutoSeaBestHop = value
     end)
     
@@ -5009,10 +5009,10 @@ M:AddSeperator(" Sea Event ")
 spawn(function()
     pcall(function()
         while wait() do
-            if game.Workspace._WorldOrigin.Locations:FindFirstChild('Frozen Dimension') then
-                FrozenIsland:Set('âœ…: Frozen Dimension Spawning')
+            if game.Workspace._WorldOrigin.Locations:FindFirstChild( "Frozen Dimension ") then
+                FrozenIsland:Set( "âœ…: Frozen Dimension Spawning ")
             else
-                FrozenIsland:Set('âŒ: Frozen Dimension Not Found')
+                FrozenIsland:Set( "âŒ: Frozen Dimension Not Found ")
             end
         end
     end)
@@ -5021,7 +5021,7 @@ end)
 
 FrozenIsland = M:AddLabel("")
 
-M:AddToggle('Teleport Frozen Dimension [ NEED SPAWN ]', false, function(value)
+M:AddToggle( "Teleport Frozen Dimension [ NEED SPAWN ] ", false, function(value)
 _G.BjirFrozenCuy = value
 StopTween(_G.BjirFrozenCuy) 
 end)
@@ -5030,7 +5030,7 @@ spawn(function()
     while wait() do
         pcall(function()
             if _G.BjirFrozenCuy then
-                local teleportLocation = game.Workspace._WorldOrigin.Locations:FindFirstChild('Frozen Dimension')
+                local teleportLocation = game.Workspace._WorldOrigin.Locations:FindFirstChild( "Frozen Dimension ")
                 if teleportLocation then
                     HyperCahaya(teleportLocation)
                 end
@@ -5169,7 +5169,7 @@ spawn(function()
         end
     end)
     
-        M:AddToggle('Auto Kill GhostShip', _G.bjirFishBoat, function(value)
+        M:AddToggle( "Auto Kill GhostShip ", _G.bjirFishBoat, function(value)
             _G.bjirFishBoat = value
             StopTween(_G.bjirFishBoat) 
         end)
@@ -5290,7 +5290,7 @@ end)
         end
           end)
 
-M:AddToggle('Auto Get Anchor [ Need Material ]', _G.BjirAnchorCuy, function(state)
+M:AddToggle( "Auto Get Anchor [ Need Material ] ", _G.BjirAnchorCuy, function(state)
 local function findItem(name, amount)
     for _, item in pairs(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventory")) do
         if item["Type"] == "Material" and item["Name"] == name and item["Count"] >= amount then
@@ -5302,7 +5302,7 @@ end
 
 if state and findItem("Monster Magnet", 1) then
     _G.BjirAnchorCuy = true
-elseif state and findItem("Terror Eyes", 2) and findItem("Electric Wing", 8) and findItem("Fool's Gold", 20) and findItem("Shark Tooth", 10) then
+elseif state and findItem("Terror Eyes", 2) and findItem("Electric Wing", 8) and findItem("Fool "s Gold", 20) and findItem("Shark Tooth", 10) then
     local args = {
     [1] = "CraftItem",
     [2] = "Check",
@@ -5319,7 +5319,7 @@ local args = {
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 wait(0.5) 
     _G.BjirAnchorCuy = true
-elseif state and (not findItem("Monster Magnet", 1) or not findItem("Terror Eyes", 2) and not findItem("Electric Wing", 8) and not findItem("Fool's Gold", 20) and not findItem("Shark Tooth", 10)) then
+elseif state and (not findItem("Monster Magnet", 1) or not findItem("Terror Eyes", 2) and not findItem("Electric Wing", 8) and not findItem("Fool "s Gold", 20) and not findItem("Shark Tooth", 10)) then
     _G.BjirAnchorCuy = false
     NotificationConfig(
         Text = "You need more materials \nto buy a Monster Magnet."
@@ -5422,7 +5422,7 @@ spawn(function()
                             end
                         end
 
-                        if game.Workspace._WorldOrigin.Locations:FindFirstChild('Frozen Dimension') then
+                        if game.Workspace._WorldOrigin.Locations:FindFirstChild( "Frozen Dimension ") then
                             _G.BjirAnchorCuy = false
                             wait(0.5)
                             game.Players.LocalPlayer.Character.Humanoid.Sit = false
@@ -5582,7 +5582,7 @@ spawn(function()
                             end
                         end
 
-                        if game.Workspace._WorldOrigin.Locations:FindFirstChild('Frozen Dimension') then
+                        if game.Workspace._WorldOrigin.Locations:FindFirstChild( "Frozen Dimension ") then
                             _G.BiirTrax = false
                             wait(0.5)
                             game.Players.LocalPlayer.Character.Humanoid.Sit = false
@@ -5712,8 +5712,8 @@ end)
                                                     v.Head.CanCollide = false
                                                 end
                                                 StartMasteryFruitMagnet = true
-                                                game:GetService'VirtualUser':CaptureController()
-                                                game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                                game:GetService "VirtualUser ":CaptureController()
+                                                game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
                                             until not _G.AutoFarmFruitMastery or v.Humanoid.Health <= 0 or not v.Parent or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false
                                         else
                                             UseSkill = false
@@ -6117,7 +6117,7 @@ end)
     
     M:AddSeperator("Soul Guitar")
     
-    local FM = M:AddLabel('Third World')
+    local FM = M:AddLabel( "Third World ")
     
     task.spawn(function()
             while task.wait() do
@@ -6231,8 +6231,8 @@ spawn(function()
 														v.HumanoidRootPart.CanCollide = false
 														v.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,20,0)
 														HyperCahaya(CFrame.new(-10160.787109375, 138.6616973876953, 5955.03076171875))
-														game:GetService'VirtualUser':CaptureController()
-														game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+														game:GetService "VirtualUser ":CaptureController()
+														game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
 													end
 												end
 											end
@@ -6348,8 +6348,8 @@ spawn(function()
 											v.HumanoidRootPart.CanCollide = false
 											v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
 											HyperCahaya(v.HumanoidRootPart.CFrame * CFrame.new(0,50,0))
-											game:GetService'VirtualUser':CaptureController()
-											game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+											game:GetService "VirtualUser ":CaptureController()
+											game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
 										end
 									end
 								end
@@ -6459,8 +6459,8 @@ spawn(function()
 									end
 									PosMonsEsp = v.HumanoidRootPart.CFrame
 									if not FastAttack then
-										game:GetService'VirtualUser':CaptureController()
-										game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+										game:GetService "VirtualUser ":CaptureController()
+										game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
 									end
 									v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 									if _G.Configs["Show Hitbox"] then
@@ -6501,9 +6501,9 @@ spawn(function()
 						HyperCahaya(game:GetService("Workspace").Map["Haunted Castle"].Summoner.Detection.CFrame)
 					elseif game:GetService("Workspace").Map:FindFirstChild("HellDimension") then
 						repeat wait()
-							if game:GetService("Workspace").Enemies:FindFirstChild("Cursed Skeleton") or game:GetService("Workspace").Enemies:FindFirstChild("Cursed Skeleton") or game:GetService("Workspace").Enemies:FindFirstChild("Hell's Messenger") then
+							if game:GetService("Workspace").Enemies:FindFirstChild("Cursed Skeleton") or game:GetService("Workspace").Enemies:FindFirstChild("Cursed Skeleton") or game:GetService("Workspace").Enemies:FindFirstChild("Hell "s Messenger") then
 								for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-									if v.Name == "Cursed Skeleton" or v.Name == "Cursed Skeleton" or v.Name == "Hell's Messenger" then
+									if v.Name == "Cursed Skeleton" or v.Name == "Cursed Skeleton" or v.Name == "Hell "s Messenger" then
 										if v.Humanoid.Health > 0 then
 											repeat wait()
 												StartMagnet = true
@@ -6519,8 +6519,8 @@ spawn(function()
 												end
 												PosMonsEsp = v.HumanoidRootPart.CFrame
 												if not FastAttack then
-													game:GetService'VirtualUser':CaptureController()
-													game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+													game:GetService "VirtualUser ":CaptureController()
+													game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
 												end
 												v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 												if _G.Configs["Show Hitbox"] then
@@ -6611,8 +6611,8 @@ spawn(function()
 										v.HumanoidRootPart.CanCollide = false
 										v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
 										HyperCahaya(v.HumanoidRootPart.CFrame * CFrame.new(0,50,0))
-										game:GetService'VirtualUser':CaptureController()
-										game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+										game:GetService "VirtualUser ":CaptureController()
+										game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
 									until v.Humanoid.Health <= 0 or not v.Parent or Auto_Quest_Tushita_2 == false
 								end
 							end
@@ -6645,8 +6645,8 @@ spawn(function()
 												EquipWeapon(_G.SelectWeapon)
 											end
 											if not FastAttack then
-												game:GetService'VirtualUser':CaptureController()
-												game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+												game:GetService "VirtualUser ":CaptureController()
+												game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
 											end
 											v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 											if _G.Configs["Show Hitbox"] then
@@ -6668,9 +6668,9 @@ spawn(function()
 						end
 					elseif game:GetService("Workspace").Map:FindFirstChild("HeavenlyDimension") then
 						repeat wait()
-							if game:GetService("Workspace").Enemies:FindFirstChild("Cursed Skeleton") or game:GetService("Workspace").Enemies:FindFirstChild("Cursed Skeleton") or game:GetService("Workspace").Enemies:FindFirstChild("Heaven's Guardian") then
+							if game:GetService("Workspace").Enemies:FindFirstChild("Cursed Skeleton") or game:GetService("Workspace").Enemies:FindFirstChild("Cursed Skeleton") or game:GetService("Workspace").Enemies:FindFirstChild("Heaven "s Guardian") then
 								for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-									if v.Name == "Cursed Skeleton" or v.Name == "Cursed Skeleton" or v.Name == "Heaven's Guardian" then
+									if v.Name == "Cursed Skeleton" or v.Name == "Cursed Skeleton" or v.Name == "Heaven "s Guardian" then
 										if v.Humanoid.Health > 0 then
 											repeat wait()
 												if Auto_Buso then
@@ -6683,8 +6683,8 @@ spawn(function()
 													EquipWeapon(_G.Select_Weapon)
 												end
 												if not FastAttack then
-													game:GetService'VirtualUser':CaptureController()
-													game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+													game:GetService "VirtualUser ":CaptureController()
+													game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
 												end
 												v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 												if _G.Configs["Show Hitbox"] then
@@ -6975,7 +6975,7 @@ end)
 						end
 					else
 
-						if _G.AutoEliteHunterHop and game:GetService("ReplicatedStorage").Remotes["CommF_"]:InvokeServer("EliteHunter") == "I don't have anything for you right now. Come back later." then
+						if _G.AutoEliteHunterHop and game:GetService("ReplicatedStorage").Remotes["CommF_"]:InvokeServer("EliteHunter") == "I don "t have anything for you right now. Come back later." then
 							hop()
 						else
 							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter")
@@ -7569,10 +7569,10 @@ end)
                 if _G.AutoObservation then
                     repeat task.wait()
                         if not game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui:FindFirstChild("ImageLabel") then
-                            game:GetService('VirtualUser'):CaptureController()
-                            game:GetService('VirtualUser'):SetKeyDown('0x65')
+                            game:GetService( "VirtualUser "):CaptureController()
+                            game:GetService( "VirtualUser "):SetKeyDown( "0x65 ")
                             wait(2)
-                            game:GetService('VirtualUser'):SetKeyUp('0x65')
+                            game:GetService( "VirtualUser "):SetKeyUp( "0x65 ")
                         end
                     until game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui:FindFirstChild("ImageLabel") or not _G.AutoObservation
                 end
@@ -7687,8 +7687,8 @@ end)
                                                     AutoHaki()
                                                     EquipWeapon(_G.SelectWeapon)
                                                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0, 30, 0)
-                                                    game:GetService'VirtualUser':CaptureController()
-                                                    game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                                    game:GetService "VirtualUser ":CaptureController()
+                                                    game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
                                                 end
                                             until not _G.Auto_Saber or not v.Parent or v.Humanoid.Health <= 0
                                         end
@@ -7742,8 +7742,8 @@ end)
                                                                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
                                                                     end
                                                                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0, 30, 0)
-                                                                    game:GetService'VirtualUser':CaptureController()
-                                                                    game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                                                    game:GetService "VirtualUser ":CaptureController()
+                                                                    game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
                                                                 end
                                                             end)
                                                         until not _G.AutoSaber or not v.Parent or v.Humanoid.Health <= 0
@@ -7960,8 +7960,8 @@ end)
                                                 v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                                                 HyperCahaya(v.HumanoidRootPart.CFrame * CFrame.new(PosX,PosY,PosZ))
                                                 v.HumanoidRootPart.CanCollide = false
-                                                game:GetService'VirtualUser':CaptureController()
-                                                game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                                game:GetService "VirtualUser ":CaptureController()
+                                                game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
                                                 MusketeerHatMon = v.HumanoidRootPart.CFrame
                                                 StartMagnetMusketeerhat = true
                                             end)
@@ -8178,8 +8178,8 @@ end)
 										v.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
 										v.HumanoidRootPart.CanCollide = false
 										v.HumanoidRootPart.Size = Vector3.new(50,50,50)
-										game:GetService'VirtualUser':CaptureController()
-										game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+										game:GetService "VirtualUser ":CaptureController()
+										game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
 										Mangnetcitzenmon = true
 									until _G.AutoObservationHakiV2 == false or v.Humanoid.Health <= 0
 									Mangnetcitzenmon = false
@@ -8207,8 +8207,8 @@ end)
 										v.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
 										v.HumanoidRootPart.CanCollide = false
 										v.HumanoidRootPart.Size = Vector3.new(50,50,50)
-										game:GetService'VirtualUser':CaptureController()
-										game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+										game:GetService "VirtualUser ":CaptureController()
+										game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
 									until _G.AutoObservationHakiV2 == false or v.Humanoid.Health <= 0
 								end
 							end
@@ -8333,8 +8333,8 @@ end)
                                     v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                                     RengokuMon = v.HumanoidRootPart.CFrame
                                     HyperCahaya(v.HumanoidRootPart.CFrame * CFrame.new(PosX,PosY,PosZ))
-                                    game:GetService'VirtualUser':CaptureController()
-                                    game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                    game:GetService "VirtualUser ":CaptureController()
+                                    game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
                                     StartRengokuMagnet = true
                                 until game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Hidden Key") or _G.AutoRengoku == false or not v.Parent or v.Humanoid.Health <= 0
                                 StartRengokuMagnet = false
@@ -8445,8 +8445,8 @@ end)
                                                 v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                                                 HyperCahaya(v.HumanoidRootPart.CFrame * CFrame.new(PosX,PosY,PosZ))													
                                                 PosMonBarto =  v.HumanoidRootPart.CFrame
-                                                game:GetService'VirtualUser':CaptureController()
-                                                game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                                game:GetService "VirtualUser ":CaptureController()
+                                                game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
                                                 AutoBartiloBring = true
                                             until not v.Parent or v.Humanoid.Health <= 0 or _G.AutoBartilo == false or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false
                                             AutoBartiloBring = false
@@ -8476,8 +8476,8 @@ end)
                                         v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                                         v.HumanoidRootPart.CFrame = OldCFrameBartlio
                                         HyperCahaya(v.HumanoidRootPart.CFrame * CFrame.new(PosX,PosY,PosZ))
-                                        game:GetService'VirtualUser':CaptureController()
-                                        game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                        game:GetService "VirtualUser ":CaptureController()
+                                        game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
                                         sethiddenproperty(game:GetService("Players").LocalPlayer,"SimulationRadius",math.huge)
                                     until not v.Parent or v.Humanoid.Health <= 0 or _G.AutoBartilo == false
                                 end
@@ -9365,7 +9365,7 @@ spawn(function()
 end)
   
   RaceV4:AddButton("Buy Ancient One Quest",function(t)
-  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer('UpgradeRace','Buy')
+  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer( "UpgradeRace ", "Buy ")
   end)
 end
 
@@ -9503,8 +9503,8 @@ end
 								Useskill = true
 								HyperCahaya(v.HumanoidRootPart.CFrame * CFrame.new(0,0,2))								
 								v.HumanoidRootPart.Size = Vector3.new(60,60,60)
-								game:GetService'VirtualUser':CaptureController()
-								game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+								game:GetService "VirtualUser ":CaptureController()
+								game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
 							until _G.AutoPlayerHunter == false or v.Humanoid.Health <= 0
 							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
 							Useskill = false
@@ -9539,8 +9539,8 @@ end
 								Useskill = true
 								HyperCahaya(v.HumanoidRootPart.CFrame * CFrame.new(0,0,2))								
 								v.HumanoidRootPart.Size = Vector3.new(60,60,60)
-								game:GetService'VirtualUser':CaptureController()
-								game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+								game:GetService "VirtualUser ":CaptureController()
+								game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
 							until _G.AutoPlayerHunter == false or v.Humanoid.Health <= 0
 							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
 							Useskill = false
@@ -9575,8 +9575,8 @@ end
 								Useskill = true
 								HyperCahaya(v.HumanoidRootPart.CFrame * CFrame.new(0,0,2))								
 								v.HumanoidRootPart.Size = Vector3.new(60,60,60)
-								game:GetService'VirtualUser':CaptureController()
-								game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+								game:GetService "VirtualUser ":CaptureController()
+								game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
 							until _G.AutoPlayerHunter == false or v.Humanoid.Health <= 0
 							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
 							Useskill = false
@@ -9645,8 +9645,8 @@ end
                         [2] = game:GetService("Players"):FindFirstChild(PlayerSelectAimbot).Character.HumanoidRootPart
                     }
                     game:GetService("Players").LocalPlayer.Character[SelectWeaponGun].RemoteFunctionShoot:InvokeServer(unpack(args))
-                    game:GetService'VirtualUser':CaptureController()
-                    game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                    game:GetService "VirtualUser ":CaptureController()
+                    game:GetService "VirtualUser ":Button1Down(Vector2.new(1280, 672))
                 end)
             end
         end
@@ -9734,10 +9734,10 @@ end
     spawn(function()
         pcall(function()
             while wait() do
-    if game.Workspace._WorldOrigin.Locations:FindFirstChild('Island 1') then
-    Island1:Set('âœ…: Island 1')
+    if game.Workspace._WorldOrigin.Locations:FindFirstChild( "Island 1 ") then
+    Island1:Set( "âœ…: Island 1 ")
     else
-      Island1:Set('âŒ: Island 1' )end
+      Island1:Set( "âŒ: Island 1 " )end
             end
         end)
 end)
@@ -9745,10 +9745,10 @@ end)
 spawn(function()
         pcall(function()
             while wait() do
-    if game.Workspace._WorldOrigin.Locations:FindFirstChild('Island 2') then
-    Island2:Set('âœ…: Island 2')
+    if game.Workspace._WorldOrigin.Locations:FindFirstChild( "Island 2 ") then
+    Island2:Set( "âœ…: Island 2 ")
     else
-      Island2:Set('âŒ: Island 2' )end
+      Island2:Set( "âŒ: Island 2 " )end
             end
         end)
 end)
@@ -9756,10 +9756,10 @@ end)
 spawn(function()
         pcall(function()
             while wait() do
-    if game.Workspace._WorldOrigin.Locations:FindFirstChild('Island 3') then
-    Island3:Set('âœ…: Island 3')
+    if game.Workspace._WorldOrigin.Locations:FindFirstChild( "Island 3 ") then
+    Island3:Set( "âœ…: Island 3 ")
     else
-      Island3:Set('âŒ: Island 3' )end
+      Island3:Set( "âŒ: Island 3 " )end
             end
         end)
 end)
@@ -9767,10 +9767,10 @@ end)
 spawn(function()
         pcall(function()
             while wait() do
-    if game.Workspace._WorldOrigin.Locations:FindFirstChild('Island 4') then
-    Island4:Set('âœ…: Island 4')
+    if game.Workspace._WorldOrigin.Locations:FindFirstChild( "Island 4 ") then
+    Island4:Set( "âœ…: Island 4 ")
     else
-      Island4:Set('âŒ: Island 4' )end
+      Island4:Set( "âŒ: Island 4 " )end
             end
         end)
 end)
@@ -9778,10 +9778,10 @@ end)
 spawn(function()
         pcall(function()
             while wait() do
-    if game.Workspace._WorldOrigin.Locations:FindFirstChild('Island 5') then
-    Island5:Set('âœ…: Island 5')
+    if game.Workspace._WorldOrigin.Locations:FindFirstChild( "Island 5 ") then
+    Island5:Set( "âœ…: Island 5 ")
     else
-      Island5:Set('âŒ: Island 5' )end
+      Island5:Set( "âŒ: Island 5 " )end
             end
         end)
 end)
@@ -11030,7 +11030,7 @@ local fruitsOnSale = {}
 local function addCommas(number)
     local formatted = tostring(number)
     while true do  
-        formatted, k = formatted:gsub("^(-?%d+)(%d%d%d)", '%1,%2')
+        formatted, k = formatted:gsub("^(-?%d+)(%d%d%d)",  "%1,%2 ")
         if k == 0 then break end
     end
     return formatted
@@ -11116,7 +11116,7 @@ local fruitsOnSale = {}
 local function addCommas(number)
     local formatted = tostring(number)
     while true do  
-        formatted, k = formatted:gsub("^(-?%d+)(%d%d%d)", '%1,%2')
+        formatted, k = formatted:gsub("^(-?%d+)(%d%d%d)",  "%1,%2 ")
         if k == 0 then break end
     end
     return formatted
@@ -11486,10 +11486,10 @@ Misc:AddSeperator("Teams")
 Misc:AddToggle("Show Chat disabled", _G.chat, function(value)
     _G.chat = value
     if _G.chat == true then
-local StarterGui = game:GetService('StarterGui')
+local StarterGui = game:GetService( "StarterGui ")
 StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, false)    
 elseif _G.chat == false then
-local StarterGui = game:GetService('StarterGui')
+local StarterGui = game:GetService( "StarterGui ")
 StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)    
 end
   end)
@@ -11497,11 +11497,11 @@ end
   Misc:AddToggle("Show leaderboard disabled", _G.leaderboard, function(a)
     _G.leaderboard = a
     if _G.leaderboard == true then
-local StarterGui = game:GetService('StarterGui')
-game:GetService('StarterGui'):SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList, false)   
+local StarterGui = game:GetService( "StarterGui ")
+game:GetService( "StarterGui "):SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList, false)   
 elseif _G.leaderboard == false then
-local StarterGui = game:GetService('StarterGui')
-game:GetService('StarterGui'):SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList, true)   
+local StarterGui = game:GetService( "StarterGui ")
+game:GetService( "StarterGui "):SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList, true)   
 end
   end)
 
@@ -11557,7 +11557,7 @@ Misc:AddToggle("Graphic",false,function(v)
 				b.Size = 1900
 				b.Threshold = 0.915
 				local c = Instance.new("ColorCorrectionEffect", a)
-				c.Name = 'ColorCorrectionEffect1_Graphic'
+				c.Name =  "ColorCorrectionEffect1_Graphic "
 				c.Brightness = 0.176
 				c.Contrast = 0.39
 				c.Enabled = true
@@ -11569,28 +11569,28 @@ Misc:AddToggle("Graphic",false,function(v)
 					c.TintColor = Color3.fromRGB(242, 193, 79)
 				end
 				local d = Instance.new("DepthOfFieldEffect", Graphic)
-				d.Name =  'DepthOfFieldEffect_Graphic'
+				d.Name =   "DepthOfFieldEffect_Graphic "
 				d.Enabled = true
 				d.FarIntensity = 0.077
 				d.FocusDistance = 21.54
 				d.InFocusRadius = 20.77
 				d.NearIntensity = 0.277
 				local e = Instance.new("ColorCorrectionEffect", a)
-				e.Name = 'ColorCorrectionEffect2_Graphic'
+				e.Name =  "ColorCorrectionEffect2_Graphic "
 				e.Brightness = 0
 				e.Contrast = -0.07
 				e.Saturation = 0
 				e.Enabled = true
 				e.TintColor = Color3.fromRGB(255, 247, 239)
 				local e2 = Instance.new("ColorCorrectionEffect", a)
-				e2.Name = 'ColorCorrectionEffect3_Graphic'
+				e2.Name =  "ColorCorrectionEffect3_Graphic "
 				e2.Brightness = 0.2
 				e2.Contrast = 0.45
 				e2.Saturation = -0.1
 				e2.Enabled = true
 				e2.TintColor = Color3.fromRGB(255, 255, 255)
 				local s = Instance.new("SunRaysEffect", a)
-				s.Name = 'SunRaysEffect_Graphic'
+				s.Name =  "SunRaysEffect_Graphic "
 				s.Enabled = false
 				s.Intensity = 0.01
 				s.Spread = 0.146
@@ -11709,7 +11709,7 @@ end)
 	    while wait() do
 	        if _G.AutoRejoin then
 	                getgenv().rejoin = game:GetService("CoreGui").RobloxPromptGui.promptOverlay.ChildAdded:Connect(function(child)
-                        if child.Name == 'ErrorPrompt' and child:FindFirstChild('MessageArea') and child.MessageArea:FindFirstChild("ErrorFrame") then
+                        if child.Name ==  "ErrorPrompt " and child:FindFirstChild( "MessageArea ") and child.MessageArea:FindFirstChild("ErrorFrame") then
                             game:GetService("TeleportService"):Teleport(game.PlaceId)
                         end
                      end)
@@ -11735,9 +11735,9 @@ end)
 local Ability = "Buso" -- Ability Name
 -- or
 -- local Ability = {Buso,Soru,Geppo}
-if type(Ability) == 'string' then
+if type(Ability) ==  "string " then
    game:GetService("CollectionService"):AddTag(game.Players.LocalPlayer.Character,Ability)
-elseif type(Ability) == 'table' then
+elseif type(Ability) ==  "table " then
    for i,v in next , Ability do
        game:GetService("CollectionService"):AddTag(game.Players.LocalPlayer.Character,v)
    end
@@ -11751,9 +11751,9 @@ elseif type(Ability) == 'table' then
 local Ability = "Soru" -- Ability Name
 -- or
 -- local Ability = {Buso,Soru,Geppo}
-if type(Ability) == 'string' then
+if type(Ability) ==  "string " then
    game:GetService("CollectionService"):AddTag(game.Players.LocalPlayer.Character,Ability)
-elseif type(Ability) == 'table' then
+elseif type(Ability) ==  "table " then
    for i,v in next , Ability do
        game:GetService("CollectionService"):AddTag(game.Players.LocalPlayer.Character,v)
    end
@@ -11767,9 +11767,9 @@ elseif type(Ability) == 'table' then
 local Ability = "Geppo" -- Ability Name
 -- or
 -- local Ability = {Buso,Soru,Geppo}
-if type(Ability) == 'string' then
+if type(Ability) ==  "string " then
    game:GetService("CollectionService"):AddTag(game.Players.LocalPlayer.Character,Ability)
-elseif type(Ability) == 'table' then
+elseif type(Ability) ==  "table " then
    for i,v in next , Ability do
        game:GetService("CollectionService"):AddTag(game.Players.LocalPlayer.Character,v)
    end
@@ -12378,7 +12378,7 @@ end)
 _G.Remove_Effect = true
 
 spawn(function()
-    game:GetService('RunService').Stepped:Connect(function()
+    game:GetService( "RunService ").Stepped:Connect(function()
         if _G.Remove_Effect then
             for i, v in pairs(game:GetService("ReplicatedStorage").Effect.Container:GetChildren()) do
                 if v.Name == "Death" then
