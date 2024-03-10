@@ -4923,7 +4923,7 @@ spawn(function()
                             game:GetService("VirtualInputManager"):SendKeyEvent(false,"V",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 							wait(0.6)
 							for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-								if v:IsA("Tool") then
+								if v:IsA('Tool') then
 									if v.ToolTip == "Sword" then -- "Blox Fruit" , "Sword" , "Wear" , "Agility"
 										game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
 									end
