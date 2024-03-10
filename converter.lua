@@ -4960,7 +4960,7 @@ spawn(function()
         end
           end)
 
-        M:AddToggle('Kill PirateShips', _G.KillGhostShip, function(value)
+        M:AddToggle("Kill PirateShips", _G.KillGhostShip, function(value)
             _G.KillGhostShip = value
             StopTween(_G.KillGhostShip) 
         end)
