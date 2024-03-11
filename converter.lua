@@ -4041,9 +4041,9 @@ spawn(function()
 						end
 					else
 						NotificationConfig(
-							Text = "Not Have Death Step" ,
-                            Status = "Error",
-							Duration = 2.5
+							"Not Have Death Step" ,
+                            "Error",
+						     2.5
 						)
 					end
 					if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate",true) == 1 then
@@ -4052,9 +4052,9 @@ spawn(function()
 						end
 					else
 						NotificationConfig(
-							Text = "Not Have SharkMan Karate" ,
-                            Status = "Error",
-							Duration = 2.5
+							"Not Have SharkMan Karate" ,
+                            "Error",
+							2.5
 						)
 					end
 					if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw",true) == 1 then
@@ -4063,18 +4063,18 @@ spawn(function()
 						end
 					else
 						NotificationConfig(
-							Text = "Not Have Electric Claw" ,
-                            Status = "Error",
-							Duration = 2.5
+							"Not Have Electric Claw" ,
+                            "Error",
+							2.5
 						)
 					end
 					if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon",true) == 1 then
 						if game.Players.LocalPlayer.Backpack:FindFirstChild("Dragon Talon") and game.Players.LocalPlayer.Backpack:FindFirstChild("Dragon Talon").Level.Value >= 400 or game.Players.LocalPlayer.Character:FindFirstChild("Dragon Talon") and game.Players.LocalPlayer.Character:FindFirstChild("Dragon Talon").Level.Value >= 400 then
 							if string.find(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman",true), "Bring") then
 								NotificationConfig(
-									Text = "Not Have Enough Material" ,
-                                    Status = "Error",
-									Duration = 2.5
+									"Not Have Enough Material" ,
+                                    "Error",
+									2.5
 								)
 							else
 								game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman")
@@ -4082,9 +4082,9 @@ spawn(function()
 						end
 					else
 						NotificationConfig(
-							Text = "Not Have Dragon Talon",
-                            Status = "Error",
-							Duration = 2.5
+							"Not Have Dragon Talon",
+                            "Error",
+							2.5
 						)
 					end
 				else
@@ -5302,7 +5302,7 @@ end
 
 if state and findItem("Monster Magnet", 1) then
     _G.BjirAnchorCuy = true
-elseif state and findItem("Terror Eyes", 2) and findItem("Electric Wing", 8) and findItem("Fool "s Gold", 20) and findItem("Shark Tooth", 10) then
+elseif state and findItem("Terror Eyes", 2) and findItem("Electric Wing", 8) and findItem("Fool s Gold", 20) and findItem("Shark Tooth", 10) then
     local args = {
     [1] = "CraftItem",
     [2] = "Check",
@@ -5319,12 +5319,12 @@ local args = {
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 wait(0.5) 
     _G.BjirAnchorCuy = true
-elseif state and (not findItem("Monster Magnet", 1) or not findItem("Terror Eyes", 2) and not findItem("Electric Wing", 8) and not findItem("Fool "s Gold", 20) and not findItem("Shark Tooth", 10)) then
+elseif state and (not findItem("Monster Magnet", 1) or not findItem("Terror Eyes", 2) and not findItem("Electric Wing", 8) and not findItem("Fool s Gold", 20) and not findItem("Shark Tooth", 10)) then
     _G.BjirAnchorCuy = false
     NotificationConfig(
-        Text = "You need more materials \nto buy a Monster Magnet."
-        Status = "Warning",
-        Duration = 2.5
+        "You need more materials \nto buy a Monster Magnet.",
+        "Warning",
+        2.5
     )
 else
     _G.BjirAnchorCuy = false
@@ -9075,11 +9075,10 @@ RaceV4:AddButton("Teleport To Acient One (Must Be in Temple Of Time!)",function(
 end)
    
    RaceV4:AddButton("Unlock Lever.", function()
-venyx:Notify("Unlocked")
+    NotificationConfig("Đang mở cần gạt, đừng báo nút khác làm", "Warning",10)
 if game:GetService("Workspace").Map["Temple of Time"].Lever.Prompt:FindFirstChild("ProximityPrompt") then
     game:GetService("Workspace").Map["Temple of Time"].Lever.Prompt:FindFirstChild("ProximityPrompt"):Remove()
 else
---[[]]
 end
 wait(0.1)
 local ProximityPrompt = Instance.new("ProximityPrompt")
@@ -9087,6 +9086,8 @@ ProximityPrompt.Parent = game:GetService("Workspace").Map["Temple of Time"].Leve
 ProximityPrompt.MaxActivationDistance = 10
 ProximityPrompt.ActionText = "Secrets Beholds Inside"
 ProximityPrompt.ObjectText = "An unknown lever of time"
+
+
 
 function onProximity()
 local part = game:GetService("Workspace").Map["Temple of Time"].MainDoor1
@@ -9122,7 +9123,10 @@ workspace:FindFirstChild("POwfpxzxzfFfFF"):Remove()
 game:GetService("Workspace").Map["Temple of Time"].NoGlitching:Remove()
 game:GetService("Workspace").Map["Temple of Time"].NoGlitching:Remove()
 game:GetService("Workspace").Map["Temple of Time"].NoGlitching:Remove()
+
 end
+
+
 
 ProximityPrompt.Triggered:Connect(onProximity)
 end)
